@@ -1,0 +1,2763 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Learning Documentation">
+      
+      
+      
+        <link rel="canonical" href="https://docs.justintylers.com/programming-languages/ruby/poignant-guide/">
+      
+      
+        <link rel="prev" href="../basics/">
+      
+      
+        <link rel="next" href="../../rust/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
+    
+    
+      
+        <title>Poignant Guide - Justins Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.26e3688c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/termynal.css">
+    
+      <link rel="stylesheet" href="../../../assets/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#whys-poignant-guide-to-ruby" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Justins Docs" class="md-header__button md-logo" aria-label="Justins Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Justins Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Poignant Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/justinsgithub/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    justinsgithub/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Justins Docs" class="md-nav__button md-logo" aria-label="Justins Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Justins Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/justinsgithub/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    justinsgithub/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Study Documentation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Computer Science
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Computer Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-science/acronyms/" class="md-nav__link">
+        Acronyms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-science/digital-information/" class="md-nav__link">
+        Digital Information
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-science/programming/" class="md-nav__link">
+        Programming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-science/internet/" class="md-nav__link">
+        Internet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-science/data-types/" class="md-nav__link">
+        Data Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-science/data-structures/" class="md-nav__link">
+        Data Structures
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-science/terms/" class="md-nav__link">
+        Terms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+          HTTP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          HTTP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-science/HTTP/http-essentials/" class="md-nav__link">
+        Essentials
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-science/HTTP/http-terminology/" class="md-nav__link">
+        Terminology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-science/HTTP/headers/" class="md-nav__link">
+        Headers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-science/HTTP/requests-responses/" class="md-nav__link">
+        Requests & Responses
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Creative
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Creative
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../creative/camera-basics/" class="md-nav__link">
+        Camera Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../creative/emojis/" class="md-nav__link">
+        Emojis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../creative/seo-fundamentals/" class="md-nav__link">
+        SEO Fundamentals
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../creative/writing-blogs/" class="md-nav__link">
+        Writing Blogs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/linux-programs/" class="md-nav__link">
+        Advanced
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/code-snips/" class="md-nav__link">
+        Code Snips
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/the-linux-command-line/" class="md-nav__link">
+        The Linux Command Line
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/directories/" class="md-nav__link">
+        Directories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/general/" class="md-nav__link">
+        General
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/zsh/" class="md-nav__link">
+        Zsh
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Programming Languages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Programming Languages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          C
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          C
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C/" class="md-nav__link">
+        Basics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          JavaScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          JavaScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/basics/" class="md-nav__link">
+        Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/objects/" class="md-nav__link">
+        Classes & Objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/code-challenges/" class="md-nav__link">
+        Code Challenges
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+          Lua
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Lua
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lua/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/code-challenges/" class="md-nav__link">
+        Code Challenges
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/data-structures-and-algorithms/" class="md-nav__link">
+        Class Queue Deque
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/recursion/" class="md-nav__link">
+        Recursion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+          Ruby
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Ruby
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basics/" class="md-nav__link">
+        Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Poignant Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Poignant Guide
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-3" class="md-nav__link">
+    Chapter 3
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-for-string-inside-word" class="md-nav__link">
+    check for string inside word
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capitalize-and-print-each-string-in-array" class="md-nav__link">
+    capitalize and print each string in array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#underscores-for-large-numbers" class="md-nav__link">
+    underscores for large numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constants-variables-that-never-change" class="md-nav__link">
+    constants (variables that never change)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kernel-methods" class="md-nav__link">
+    kernel methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-methods" class="md-nav__link">
+    class methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4" class="md-nav__link">
+    Chapter 4
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nil" class="md-nav__link">
+    nil
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-statement" class="md-nav__link">
+    if statement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unless-keyword" class="md-nav__link">
+    unless keyword
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruby-version" class="md-nav__link">
+    ruby version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#irb" class="md-nav__link">
+    irb
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ri" class="md-nav__link">
+    ri
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-5" class="md-nav__link">
+    Chapter 5
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#case-when-statement" class="md-nav__link">
+    case when statement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-class" class="md-nav__link">
+    creating a class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-indexes" class="md-nav__link">
+    string indexes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array-collect-method" class="md-nav__link">
+    array collect method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classes-raise-array-of-arguments-attr" class="md-nav__link">
+    classes, raise, array of arguments, attr
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-6" class="md-nav__link">
+    chapter 6
+  </a>
+  
+    <nav class="md-nav" aria-label="chapter 6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-uri-example" class="md-nav__link">
+    open-uri example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-programming" class="md-nav__link">
+    meta programming
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-programming-with-classes" class="md-nav__link">
+    meta programming with classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-programming-with-classes-part-2" class="md-nav__link">
+    meta programming with classes part 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+          Rust
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_6">
+          <span class="md-nav__icon md-icon"></span>
+          Rust
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/datatypes/" class="md-nav__link">
+        Datatypes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/basics/" class="md-nav__link">
+        VFCL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/ownership/" class="md-nav__link">
+        Ownership
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/code-examples/" class="md-nav__link">
+        Code Examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/mini-projects/" class="md-nav__link">
+        Mini Projects
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+          SQL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_7">
+          <span class="md-nav__icon md-icon"></span>
+          SQL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Resources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Resources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/resources/" class="md-nav__link">
+        Learning Resources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/learning-software/" class="md-nav__link">
+        Learning Tips
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/misc/understanding-apis/" class="md-nav__link">
+        Understanding APIs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/docker-compose/" class="md-nav__link">
+        Docker Compose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/eslint-prettier/" class="md-nav__link">
+        ESLint Prettier
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_5">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/git/essentials/" class="md-nav__link">
+        Git Essentials
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/git/github-pages/" class="md-nav__link">
+        GitHub Pages
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+          React
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_6">
+          <span class="md-nav__icon md-icon"></span>
+          React
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/react/authentication/" class="md-nav__link">
+        Authentication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/react/design-patterns/" class="md-nav__link">
+        Design Patterns
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/react/ecosystems/" class="md-nav__link">
+        Ecosystem
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/react/getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/react/essentials/" class="md-nav__link">
+        Essentials
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/react/hooks-descriptions/" class="md-nav__link">
+        Hooks Descriptions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/react/rendering-process/" class="md-nav__link">
+        Rendering Process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/react/software-architecture/" class="md-nav__link">
+        Software Architecture
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/react/state-management/" class="md-nav__link">
+        State Management
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+          TypeScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_7">
+          <span class="md-nav__icon md-icon"></span>
+          TypeScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/typescript/" class="md-nav__link">
+        Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/typescript/essentials/" class="md-nav__link">
+        Essentials
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+          Vim
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_8">
+          <span class="md-nav__icon md-icon"></span>
+          Vim
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/vim/learning-vim/" class="md-nav__link">
+        New Learnings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/vim/nvim-config/" class="md-nav__link">
+        Nvim Config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/vim/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/vim/snips/" class="md-nav__link">
+        Vim Commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/vim/spacevim-config/" class="md-nav__link">
+        SpaceVim Config
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-3" class="md-nav__link">
+    Chapter 3
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-for-string-inside-word" class="md-nav__link">
+    check for string inside word
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capitalize-and-print-each-string-in-array" class="md-nav__link">
+    capitalize and print each string in array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#underscores-for-large-numbers" class="md-nav__link">
+    underscores for large numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constants-variables-that-never-change" class="md-nav__link">
+    constants (variables that never change)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kernel-methods" class="md-nav__link">
+    kernel methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-methods" class="md-nav__link">
+    class methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4" class="md-nav__link">
+    Chapter 4
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nil" class="md-nav__link">
+    nil
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-statement" class="md-nav__link">
+    if statement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unless-keyword" class="md-nav__link">
+    unless keyword
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruby-version" class="md-nav__link">
+    ruby version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#irb" class="md-nav__link">
+    irb
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ri" class="md-nav__link">
+    ri
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-5" class="md-nav__link">
+    Chapter 5
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#case-when-statement" class="md-nav__link">
+    case when statement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-class" class="md-nav__link">
+    creating a class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-indexes" class="md-nav__link">
+    string indexes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array-collect-method" class="md-nav__link">
+    array collect method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classes-raise-array-of-arguments-attr" class="md-nav__link">
+    classes, raise, array of arguments, attr
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-6" class="md-nav__link">
+    chapter 6
+  </a>
+  
+    <nav class="md-nav" aria-label="chapter 6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-uri-example" class="md-nav__link">
+    open-uri example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-programming" class="md-nav__link">
+    meta programming
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-programming-with-classes" class="md-nav__link">
+    meta programming with classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-programming-with-classes-part-2" class="md-nav__link">
+    meta programming with classes part 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="whys-poignant-guide-to-ruby">Why's (poignant) guide to ruby<a class="headerlink" href="#whys-poignant-guide-to-ruby" title="Permanent link">&para;</a></h1>
+<p>An interesting / strange book giving an introduction and examples of the ruby language</p>
+<h2 id="chapter-3">Chapter 3<a class="headerlink" href="#chapter-3" title="Permanent link">&para;</a></h2>
+<h3 id="check-for-string-inside-word">check for string inside word<a class="headerlink" href="#check-for-string-inside-word" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">exit</span><span class="w"> </span><span class="k">unless</span><span class="w"> </span><span class="s1">&#39;restaurant&#39;</span><span class="o">.</span><span class="n">include?</span><span class="w"> </span><span class="s1">&#39;aura&#39;</span>
+</code></pre></div>
+<h3 id="capitalize-and-print-each-string-in-array">capitalize and print each string in array<a class="headerlink" href="#capitalize-and-print-each-string-in-array" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="s1">&#39;toast&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;cheese&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;wine&#39;</span><span class="o">].</span><span class="n">each</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">food</span><span class="o">|</span><span class="w"> </span><span class="nb">print</span><span class="w"> </span><span class="n">food</span><span class="o">.</span><span class="n">capitalize</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<h3 id="underscores-for-large-numbers">underscores for large numbers<a class="headerlink" href="#underscores-for-large-numbers" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">one_billion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1_000_000_000</span>
+</code></pre></div>
+<h3 id="constants-variables-that-never-change">constants (variables that never change)<a class="headerlink" href="#constants-variables-that-never-change" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="no">EmpireStateBuilding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;350 5th Avenue, NYC, NY&#39;</span>
+</code></pre></div>
+<h3 id="methods">methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">front_door</span><span class="o">.</span><span class="n">open</span>
+<span class="n">front_door</span><span class="o">.</span><span class="n">open</span><span class="o">.</span><span class="n">close</span>
+<span class="n">front_door</span><span class="o">.</span><span class="n">is_open?</span>
+<span class="n">front_door</span><span class="o">.</span><span class="n">paint</span><span class="p">(</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="ss">:red</span><span class="w"> </span><span class="p">)</span><span class="o">.</span><span class="n">dry</span><span class="p">(</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="p">)</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="kernel-methods">kernel methods<a class="headerlink" href="#kernel-methods" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="w"> </span><span class="s1">&#39;print is a kernel method and does not require a dot&#39;</span>
+</code></pre></div>
+<h3 id="class-methods">class methods<a class="headerlink" href="#class-methods" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="no">Door</span><span class="o">::</span><span class="kp">new</span><span class="p">(</span><span class="w"> </span><span class="ss">:oak</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<h2 id="chapter-4">Chapter 4<a class="headerlink" href="#chapter-4" title="Permanent link">&para;</a></h2>
+<h3 id="nil">nil<a class="headerlink" href="#nil" title="Permanent link">&para;</a></h3>
+<p>means empty, or false (not equal to 0)</p>
+<div class="highlight"><pre><span></span><code><span class="n">empty_cup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">nil</span>
+</code></pre></div>
+<h3 id="if-statement">if statement<a class="headerlink" href="#if-statement" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="n">empty_cup</span><span class="w"> </span>
+<span class="w">  </span><span class="nb">print</span><span class="w"> </span><span class="s1">&#39;empty_cup is not nil or false&#39;</span>
+<span class="k">end</span>
+</code></pre></div>
+<h3 id="unless-keyword">unless keyword<a class="headerlink" href="#unless-keyword" title="Permanent link">&para;</a></h3>
+<p>similar to "if not" </p>
+<div class="highlight"><pre><span></span><code><span class="k">unless</span><span class="w"> </span><span class="n">empty_cup</span><span class="w"> </span>
+<span class="w">  </span><span class="nb">print</span><span class="w"> </span><span class="s1">&#39;cup is nil or false&#39;</span>
+<span class="k">end</span>
+
+<span class="nb">print</span><span class="w"> </span><span class="s1">&#39;we have a plastic cup, but not a glass cup&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">plastic_cup</span><span class="w"> </span><span class="k">unless</span><span class="w"> </span><span class="n">glass_cup</span>
+</code></pre></div>
+<h3 id="ruby-version">ruby version<a class="headerlink" href="#ruby-version" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">ruby</span><span class="w"> </span><span class="o">-</span><span class="n">v</span>
+</code></pre></div>
+<h3 id="irb">irb<a class="headerlink" href="#irb" title="Permanent link">&para;</a></h3>
+<p>interactive ruby</p>
+<div class="highlight"><pre><span></span><code>irb<span class="w"> </span>
+irb<span class="w"> </span>--prompt<span class="w"> </span>simple
+</code></pre></div>
+<h3 id="ri">ri<a class="headerlink" href="#ri" title="Permanent link">&para;</a></h3>
+<ul>
+<li>gives description of specified Ruby Class or method</li>
+</ul>
+<div class="highlight"><pre><span></span><code>ri File
+ri File::read
+ri -l # lists all Classes / Modules
+</code></pre></div>
+<h2 id="chapter-5">Chapter 5<a class="headerlink" href="#chapter-5" title="Permanent link">&para;</a></h2>
+<h3 id="case-when-statement">case when statement<a class="headerlink" href="#case-when-statement" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">dr_chams_timeline</span><span class="p">(</span><span class="w"> </span><span class="n">year</span><span class="w"> </span><span class="p">)</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="n">year</span>
+<span class="w">  </span><span class="k">when</span><span class="w"> </span><span class="mi">1894</span>
+<span class="w">    </span><span class="s2">&quot;Born.&quot;</span>
+<span class="w">  </span><span class="k">when</span><span class="w"> </span><span class="mi">1895</span><span class="o">..</span><span class="mi">1913</span>
+<span class="w">    </span><span class="s2">&quot;Childhood in Lousville, Winston Co., Mississippi.&quot;</span>
+<span class="w">  </span><span class="k">when</span><span class="w"> </span><span class="mi">1914</span><span class="o">..</span><span class="mi">1919</span>
+<span class="w">    </span><span class="s2">&quot;Worked at a pecan nursery; punched a Quaker.&quot;</span>
+<span class="w">  </span><span class="k">when</span><span class="w"> </span><span class="mi">1920</span><span class="o">..</span><span class="mi">1928</span>
+<span class="w">    </span><span class="s2">&quot;Sailed in the Brotherhood of River Wisdomming, which journeyed \</span>
+<span class="s2">     the Mississippi River and engaged in thoughtful self-improvement, \</span>
+<span class="s2">     where he finished 140 credit hours from their Oarniversity.&quot;</span>
+<span class="w">  </span><span class="k">when</span><span class="w"> </span><span class="mi">1929</span>
+<span class="w">    </span><span class="s2">&quot;Returned to Louisville to pen a novel about time-travelling pheasant hunters.&quot;</span>
+<span class="w">  </span><span class="k">when</span><span class="w"> </span><span class="mi">1930</span><span class="o">..</span><span class="mi">1933</span>
+<span class="w">    </span><span class="s2">&quot;Took up a respectable career insuring pecan nurseries.  Financially stable, he \</span>
+<span class="s2">     spent time in Brazil and New Mexico, buying up rare paper-shell pecan trees.  Just \</span>
+<span class="s2">     as his notoriety came to a crescendo: gosh, he tried to buried himself alive.&quot;</span>
+<span class="w">  </span><span class="k">when</span><span class="w"> </span><span class="mi">1934</span>
+<span class="w">    </span><span class="s2">&quot;Went back to writing his novel.  Changed the hunters to insurance tycoons and the \</span>
+<span class="s2">     pheasants to Quakers.&quot;</span>
+<span class="w">  </span><span class="k">when</span><span class="w"> </span><span class="mi">1935</span><span class="o">..</span><span class="mi">1940</span>
+<span class="w">    </span><span class="s2">&quot;Took Arthur Cone, the Headmaster of the Brotherhood of River Wisdomming, as a \</span>
+<span class="s2">     houseguest.  Together for five years, engineering and inventing.&quot;</span>
+<span class="w">  </span><span class="k">when</span><span class="w"> </span><span class="mi">1941</span>
+<span class="w">    </span><span class="s2">&quot;And this is where things got interesting.&quot;</span>
+<span class="w">  </span><span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<h3 id="creating-a-class">creating a class<a class="headerlink" href="#creating-a-class" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="w"> </span><span class="s1">&#39;endertromb&#39;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">WishMaker</span>
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">initialize</span>
+<span class="w">    </span><span class="vi">@energy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">rand</span><span class="p">(</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">)</span>
+<span class="w">  </span><span class="k">end</span>
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">grant</span><span class="p">(</span><span class="w"> </span><span class="n">wish</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">wish</span><span class="o">.</span><span class="n">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">wish</span><span class="o">.</span><span class="n">include?</span><span class="w"> </span><span class="s1">&#39; &#39;</span>
+<span class="w">      </span><span class="k">raise</span><span class="w"> </span><span class="no">ArgumentError</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Bad wish.&quot;</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="vi">@energy</span><span class="o">.</span><span class="n">zero?</span>
+<span class="w">      </span><span class="k">raise</span><span class="w"> </span><span class="no">Exception</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;No energy left.&quot;</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">    </span><span class="vi">@energy</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="no">Endertromb</span><span class="o">::</span><span class="n">make</span><span class="p">(</span><span class="w"> </span><span class="n">wish</span><span class="w"> </span><span class="p">)</span>
+<span class="w">  </span><span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<h3 id="string-indexes">string indexes<a class="headerlink" href="#string-indexes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;A string is a long shelf of letters and spaces.&quot;</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">str</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w">       </span><span class="c1"># prints &#39;A&#39;</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">str</span><span class="o">[</span><span class="mi">0</span><span class="o">..-</span><span class="mi">1</span><span class="o">]</span><span class="w">   </span><span class="c1"># prints &#39;A string is a long shelf of letters and spaces.&#39;</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">str</span><span class="o">[</span><span class="mi">1</span><span class="o">..-</span><span class="mi">2</span><span class="o">]</span><span class="w">   </span><span class="c1"># prints &#39; string is a long shelf of letters and spaces&#39;</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">str</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">]</span><span class="w">    </span><span class="c1"># prints &#39;A s&#39;</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">str</span><span class="o">[</span><span class="s1">&#39;shelf&#39;</span><span class="o">]</span><span class="w"> </span><span class="c1"># prints &#39;shelf&#39;</span>
+
+<span class="nb">puts</span><span class="w"> </span><span class="n">str</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="o">]</span><span class="w">    </span><span class="c1"># prints nil</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">str</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">str</span><span class="o">.</span><span class="n">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="c1"># prints &#39;A string is a long shelf of letters and spaces&#39;</span>
+</code></pre></div>
+<h3 id="array-collect-method">array collect method<a class="headerlink" href="#array-collect-method" title="Permanent link">&para;</a></h3>
+<p>similar to JavaScript map method</p>
+<div class="highlight"><pre><span></span><code><span class="n">addtips</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">9</span><span class="o">.</span><span class="mo">00</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="o">.</span><span class="mo">00</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="o">.</span><span class="mo">00</span><span class="o">].</span><span class="n">collect</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">cost</span><span class="o">|</span><span class="w"> </span><span class="n">cost</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">cost</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">20</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<h3 id="classes-raise-array-of-arguments-attr">classes, raise, array of arguments, attr<a class="headerlink" href="#classes-raise-array-of-arguments-attr" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">LotteryTicket</span>
+
+<span class="w">  </span><span class="no">NUMERIC_RANGE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">..</span><span class="mi">25</span>
+
+<span class="w">  </span><span class="kp">attr_reader</span><span class="w"> </span><span class="ss">:picks</span><span class="p">,</span><span class="w"> </span><span class="ss">:purchased</span><span class="w"> </span><span class="c1"># attr_reader, attr_ writer, attr_accessor manage access to methods outside a class</span>
+
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">initialize</span><span class="p">(</span><span class="w"> </span><span class="o">*</span><span class="n">picks</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="c1"># *picks means all given arguments will be turned into an Array and can be any number</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">picks</span><span class="o">.</span><span class="n">length</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">      </span><span class="k">raise</span><span class="w"> </span><span class="no">ArgumentError</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;three numbers must be picked&quot;</span><span class="w"> </span><span class="c1"># can use built in Ruby errors</span>
+<span class="w">    </span><span class="k">elsif</span><span class="w"> </span><span class="n">picks</span><span class="o">.</span><span class="n">uniq</span><span class="o">.</span><span class="n">length</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">      </span><span class="k">raise</span><span class="w"> </span><span class="no">ArgumentError</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;the three picks must be different numbers&quot;</span>
+<span class="w">    </span><span class="k">elsif</span><span class="w"> </span><span class="n">picks</span><span class="o">.</span><span class="n">detect</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="nb">p</span><span class="o">|</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="no">NUMERIC_RANGE</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nb">p</span><span class="w"> </span><span class="p">}</span>
+<span class="w">      </span><span class="k">raise</span><span class="w"> </span><span class="no">ArgumentError</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;the three picks must be numbers between 1 and 25&quot;</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">    </span><span class="vi">@picks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">picks</span>
+<span class="w">    </span><span class="vi">@purchased</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span>
+<span class="w">  </span><span class="k">end</span>
+
+<span class="w">  </span><span class="c1"># if Argument error is thrown because 2 numbers are the same, then it will rescue and retry until numbers are unique</span>
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nc">self</span><span class="o">.</span><span class="nf">new_random</span>
+<span class="w">    </span><span class="kp">new</span><span class="p">(</span><span class="w"> </span><span class="nb">rand</span><span class="p">(</span><span class="w"> </span><span class="mi">25</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nb">rand</span><span class="p">(</span><span class="w"> </span><span class="mi">25</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nb">rand</span><span class="p">(</span><span class="w"> </span><span class="mi">25</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span>
+<span class="w">  </span><span class="k">rescue</span><span class="w"> </span><span class="no">ArgumentError</span>
+<span class="w">    </span><span class="k">retry</span>
+<span class="w">  </span><span class="k">end</span>
+
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">score</span><span class="p">(</span><span class="w"> </span><span class="n">final</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="n">final</span><span class="o">.</span><span class="n">picks</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">note</span><span class="o">|</span>
+<span class="w">      </span><span class="n">count</span><span class="w"> </span><span class="o">+=</span><span class="mi">1</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">picks</span><span class="o">.</span><span class="n">include?</span><span class="w"> </span><span class="n">note</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">    </span><span class="n">count</span>
+<span class="w">  </span><span class="k">end</span>
+
+<span class="k">end</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">LotteryDraw</span>
+<span class="w">  </span><span class="vc">@@tickets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nc">LotteryDraw</span><span class="o">.</span><span class="nf">buy</span><span class="p">(</span><span class="w"> </span><span class="n">customer</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">tickets</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="k">unless</span><span class="w"> </span><span class="vc">@@tickets</span><span class="o">.</span><span class="n">has_key?</span><span class="p">(</span><span class="w"> </span><span class="n">customer</span><span class="w"> </span><span class="p">)</span>
+<span class="w">      </span><span class="vc">@@tickets</span><span class="o">[</span><span class="n">customer</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[]</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">    </span><span class="vc">@@tickets</span><span class="o">[</span><span class="n">customer</span><span class="o">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">tickets</span>
+<span class="w">  </span><span class="k">end</span>
+<span class="k">end</span>
+
+
+
+<span class="k">class</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="no">LotteryDraw</span><span class="w"> </span><span class="c1"># &lt;&lt; operator allows you to alter the definition of an object</span>
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">play</span>
+<span class="w">    </span><span class="n">final</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">LotteryTicket</span><span class="o">.</span><span class="n">new_random</span>
+<span class="w">    </span><span class="n">winners</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="vc">@@tickets</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">buyer</span><span class="p">,</span><span class="w"> </span><span class="n">ticket_list</span><span class="o">|</span>
+<span class="w">      </span><span class="n">ticket_list</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">ticket</span><span class="o">|</span>
+<span class="w">        </span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ticket</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="w"> </span><span class="n">final</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">next</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">score</span><span class="o">.</span><span class="n">zero?</span>
+<span class="w">        </span><span class="n">winners</span><span class="o">[</span><span class="n">buyer</span><span class="o">]</span><span class="w"> </span><span class="o">||=</span><span class="w"> </span><span class="o">[]</span><span class="w"> </span><span class="c1"># shortcut for winners[buyer] = winners[buyer] || [] </span>
+<span class="w">        </span><span class="n">winners</span><span class="o">[</span><span class="n">buyer</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="n">ticket</span><span class="p">,</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">]</span>
+<span class="w">      </span><span class="k">end</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">    </span><span class="vc">@@tickets</span><span class="o">.</span><span class="n">clear</span>
+<span class="w">    </span><span class="n">winners</span>
+<span class="w">  </span><span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<h2 id="chapter-6">chapter 6<a class="headerlink" href="#chapter-6" title="Permanent link">&para;</a></h2>
+<h3 id="open-uri-example">open-uri example<a class="headerlink" href="#open-uri-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="w"> </span><span class="s1">&#39;open-uri&#39;</span>
+<span class="nb">require</span><span class="w"> </span><span class="s1">&#39;cgi&#39;</span>
+
+<span class="k">module</span><span class="w"> </span><span class="nn">PreEventualist</span>
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nc">self</span><span class="o">.</span><span class="nf">open</span><span class="p">(</span><span class="n">page</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">)</span>
+<span class="w">    </span><span class="n">qs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">query</span><span class="o">.</span><span class="n">map</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="o">|</span>
+<span class="w">      </span><span class="s2">&quot;</span><span class="si">#{</span><span class="no">CGI</span><span class="o">.</span><span class="n">escape</span><span class="w"> </span><span class="n">k</span><span class="si">}</span><span class="s2">=</span><span class="si">#{</span><span class="no">CGI</span><span class="o">.</span><span class="n">escape</span><span class="w"> </span><span class="n">v</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="k">end</span><span class="o">.</span><span class="n">join</span><span class="w"> </span><span class="s1">&#39;&amp;&#39;</span>
+<span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http://preeventualist.org/lost/</span><span class="si">#{</span><span class="n">page</span><span class="si">}</span><span class="s2">?</span><span class="si">#{</span><span class="n">qs</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;QUERY </span><span class="si">#{</span><span class="n">query</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="no">URI</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">lost</span><span class="o">|</span>
+<span class="w">      </span><span class="n">lost</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;--</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">  </span><span class="k">end</span>
+
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nc">self</span><span class="o">.</span><span class="nf">search</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">open</span><span class="w"> </span><span class="s1">&#39;search&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;q&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">word</span>
+<span class="w">  </span><span class="k">end</span>
+
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nc">self</span><span class="o">.</span><span class="nf">searchlost</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">open</span><span class="w"> </span><span class="s1">&#39;searchlost&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;q&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">word</span>
+<span class="w">  </span><span class="k">end</span>
+
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nc">self</span><span class="o">.</span><span class="nf">searchfound</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">open</span><span class="w"> </span><span class="s1">&#39;searchfound&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;q&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">word</span>
+<span class="w">  </span><span class="k">end</span>
+
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nc">self</span><span class="o">.</span><span class="nf">addfound</span><span class="p">(</span><span class="n">your_name</span><span class="p">,</span><span class="w"> </span><span class="n">item_lost</span><span class="p">,</span><span class="w"> </span><span class="n">found_at</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">open</span><span class="w"> </span><span class="s1">&#39;addfound&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;name&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">your_name</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;item&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">item_lost</span><span class="p">,</span>
+<span class="w">                     </span><span class="s1">&#39;at&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">found_at</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;desc&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">description</span>
+<span class="w">  </span><span class="k">end</span>
+
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nc">self</span><span class="o">.</span><span class="nf">addlost</span><span class="p">(</span><span class="n">your_name</span><span class="p">,</span><span class="w"> </span><span class="n">item_found</span><span class="p">,</span><span class="w"> </span><span class="n">last_seen</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">open</span><span class="w"> </span><span class="s1">&#39;addlost&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;name&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">your_name</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;item&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">item_found</span><span class="p">,</span>
+<span class="w">                    </span><span class="s1">&#39;seen&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">last_seen</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;desc&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">description</span>
+<span class="w">  </span><span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<h3 id="meta-programming">meta programming<a class="headerlink" href="#meta-programming" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The author explains meta programming as code which is used to write other code (or creating programs to create other programs)</li>
+<li>An example of above would be writing a class which future classes could inherit from, using the original class code to write more code </li>
+<li>a real life example is hiring and training an employee, who's job is to train new employees </li>
+</ul>
+<blockquote>
+<p>When one learns to learn, one is making models, using symbols, analogizing, making metaphors, in short, inventing and using language, mathematics, art, politics, business, etc. At the critical brain (cortex) size, languages and its consequences appear. To avoid the necessity of repeating learning to learn, symbols, metaphors, models each time, I symbolize the underlying idea in these operations as metaprogramming. </p>
+<p>- John C. Lilly, Programming and Metaprogramming in the Human Biocomputer, New York, 1972.</p>
+<p>All sensuous response to reality is an interpretation of it. Beetles and monkeys clearly interpret their world, and act on the basis of what they see. Our physical senses are themselves organs of interpretation. What distinguishes us from our fellow animals is that we are able in turn to interpret these interpretations. In that sense, all human language is meta-language. It is a second-order reflection on the ‘language’ of our bodies—of our sensory apparatus.</p>
+<p>- Terry Eagleton, After Theory, London, 2003, ch. 3.</p>
+</blockquote>
+<ul>
+<li>the <code>eval</code> method takes in a string argument and runs the code as if it was not a string</li>
+<li>the <code>eval</code> method "evaluates" a string as if it were normal code</li>
+</ul>
+<h3 id="meta-programming-with-classes">meta programming with classes<a class="headerlink" href="#meta-programming-with-classes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># The guts of life force within Dwemthy&#39;s Array</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Creature</span>
+<span class="w">  </span><span class="c1"># Get a metaclass for this class</span>
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nc">self</span><span class="o">.</span><span class="nf">metaclass</span>
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="nb">self</span><span class="p">;</span><span class="w"> </span><span class="nb">self</span><span class="p">;</span><span class="w"> </span><span class="k">end</span>
+<span class="w">  </span><span class="k">end</span>
+
+<span class="w">  </span><span class="c1"># Advanced metaprogramming code for nice, clean traits</span>
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nc">self</span><span class="o">.</span><span class="nf">traits</span><span class="p">(</span><span class="o">*</span><span class="n">arr</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="vi">@traits</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">arr</span><span class="o">.</span><span class="n">empty?</span>
+
+<span class="w">    </span><span class="c1"># 1. Set up accessors for each variable</span>
+<span class="w">    </span><span class="kp">attr_accessor</span><span class="p">(</span><span class="o">*</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1"># 2. Add a new class method to for each trait.</span>
+<span class="w">    </span><span class="n">arr</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">a</span><span class="o">|</span>
+<span class="w">      </span><span class="n">metaclass</span><span class="o">.</span><span class="n">instance_eval</span><span class="w"> </span><span class="k">do</span>
+<span class="w">        </span><span class="n">define_method</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">val</span><span class="o">|</span>
+<span class="w">          </span><span class="vi">@traits</span><span class="w"> </span><span class="o">||=</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">          </span><span class="vi">@traits</span><span class="o">[</span><span class="n">a</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">val</span>
+<span class="w">        </span><span class="k">end</span>
+<span class="w">      </span><span class="k">end</span>
+<span class="w">    </span><span class="k">end</span>
+
+<span class="w">    </span><span class="c1"># 3. For each monster, the `initialize&#39; method</span>
+<span class="w">    </span><span class="c1">#    should use the default number for each trait.</span>
+<span class="w">    </span><span class="nb">class_eval</span><span class="w"> </span><span class="k">do</span>
+<span class="w">      </span><span class="n">define_method</span><span class="p">(</span><span class="ss">:initialize</span><span class="p">)</span><span class="w"> </span><span class="k">do</span>
+<span class="w">        </span><span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">traits</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="o">|</span>
+<span class="w">          </span><span class="nb">instance_variable_set</span><span class="p">(</span><span class="s2">&quot;@</span><span class="si">#{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">)</span>
+<span class="w">        </span><span class="k">end</span>
+<span class="w">      </span><span class="k">end</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">  </span><span class="k">end</span>
+
+<span class="w">  </span><span class="c1"># Creature attributes are read-only</span>
+<span class="w">  </span><span class="n">traits</span><span class="w"> </span><span class="ss">:life</span><span class="p">,</span><span class="w"> </span><span class="ss">:strength</span><span class="p">,</span><span class="w"> </span><span class="ss">:charisma</span><span class="p">,</span><span class="w"> </span><span class="ss">:weapon</span>
+
+<span class="w">  </span><span class="c1"># This method applies a hit taken during a fight.</span>
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">hit</span><span class="p">(</span><span class="n">damage</span><span class="p">)</span>
+<span class="w">    </span><span class="n">p_up</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">rand</span><span class="p">(</span><span class="n">charisma</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">p_up</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">7</span>
+<span class="w">      </span><span class="vi">@life</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">p_up</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">      </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;[</span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="si">}</span><span class="s2"> magick powers up </span><span class="si">#{</span><span class="n">p_up</span><span class="si">}</span><span class="s2">!]&quot;</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">    </span><span class="vi">@life</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">damage</span>
+<span class="w">    </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;[</span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="si">}</span><span class="s2"> has died.]&quot;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="vi">@life</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="k">end</span>
+
+<span class="w">  </span><span class="c1"># This method takes one turn in a fight.</span>
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">fight</span><span class="p">(</span><span class="n">enemy</span><span class="p">,</span><span class="w"> </span><span class="n">weapon</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">life</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;[</span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="si">}</span><span class="s2"> is too dead to fight!]&quot;</span>
+<span class="w">      </span><span class="k">return</span>
+<span class="w">    </span><span class="k">end</span>
+
+<span class="w">    </span><span class="c1"># Attack the opponent</span>
+<span class="w">    </span><span class="n">your_hit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">rand</span><span class="p">(</span><span class="n">strength</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">weapon</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;[You hit with </span><span class="si">#{</span><span class="n">your_hit</span><span class="si">}</span><span class="s2"> points of damage!]&quot;</span>
+<span class="w">    </span><span class="n">enemy</span><span class="o">.</span><span class="n">hit</span><span class="p">(</span><span class="n">your_hit</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1"># Retaliation</span>
+<span class="w">    </span><span class="nb">p</span><span class="w"> </span><span class="n">enemy</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">enemy</span><span class="o">.</span><span class="n">life</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="n">enemy_hit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">rand</span><span class="p">(</span><span class="n">enemy</span><span class="o">.</span><span class="n">strength</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">enemy</span><span class="o">.</span><span class="n">weapon</span><span class="p">)</span>
+<span class="w">      </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;[Your enemy hit with </span><span class="si">#{</span><span class="n">enemy_hit</span><span class="si">}</span><span class="s2"> points of damage!]&quot;</span>
+<span class="w">      </span><span class="n">hit</span><span class="p">(</span><span class="n">enemy_hit</span><span class="p">)</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">  </span><span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Dragon</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">Creature</span>
+<span class="w">  </span><span class="n">life</span><span class="w"> </span><span class="mi">1340</span><span class="w">     </span><span class="c1"># tough scales</span>
+<span class="w">  </span><span class="n">strength</span><span class="w"> </span><span class="mi">451</span><span class="w">  </span><span class="c1"># bristling veins</span>
+<span class="w">  </span><span class="n">charisma</span><span class="w"> </span><span class="mi">1020</span><span class="w"> </span><span class="c1"># toothy smile</span>
+<span class="w">  </span><span class="n">weapon</span><span class="w"> </span><span class="mi">939</span><span class="w">    </span><span class="c1"># fire breath</span>
+<span class="k">end</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">DwemthysArray</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nb">Array</span>
+<span class="w">  </span><span class="k">alias</span><span class="w"> </span><span class="n">_inspect</span><span class="w"> </span><span class="nb">inspect</span>
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">inspect</span>
+<span class="w">    </span><span class="s2">&quot;#&lt;</span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="si">}#{</span><span class="n">_inspect</span><span class="si">}</span><span class="s2">&gt;&quot;</span>
+<span class="w">  </span><span class="k">end</span>
+
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">method_missing</span><span class="p">(</span><span class="n">meth</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="w">    </span><span class="n">answer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">first</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">meth</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">first</span><span class="o">.</span><span class="n">life</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="n">shift</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="n">empty?</span>
+<span class="w">        </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;[Whoa. You decimated Dwemthy&#39;s Array!]&quot;</span>
+<span class="w">      </span><span class="k">else</span>
+<span class="w">        </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;[Get ready. </span><span class="si">#{</span><span class="n">first</span><span class="o">.</span><span class="n">class</span><span class="si">}</span><span class="s2"> has emerged.]&quot;</span>
+<span class="w">      </span><span class="k">end</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">    </span><span class="n">answer</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<h3 id="meta-programming-with-classes-part-2">meta programming with classes part 2<a class="headerlink" href="#meta-programming-with-classes-part-2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="w"> </span><span class="s1">&#39;./dwemthy&#39;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Rabbit</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">Creature</span>
+<span class="w">  </span><span class="n">traits</span><span class="w"> </span><span class="ss">:bombs</span>
+
+<span class="w">  </span><span class="n">life</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">  </span><span class="n">strength</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">  </span><span class="n">charisma</span><span class="w"> </span><span class="mi">44</span>
+<span class="w">  </span><span class="n">weapon</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">  </span><span class="n">bombs</span><span class="w"> </span><span class="mi">3</span>
+
+<span class="w">  </span><span class="c1"># little boomerang</span>
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">^</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+<span class="w">    </span><span class="n">fight</span><span class="p">(</span><span class="n">other</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">)</span>
+<span class="w">  </span><span class="k">end</span>
+
+<span class="w">  </span><span class="c1"># the hero&#39;s sword is unlimited!!</span>
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">/</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+<span class="w">    </span><span class="n">fight</span><span class="p">(</span><span class="n">other</span><span class="p">,</span><span class="w"> </span><span class="nb">rand</span><span class="p">(</span><span class="mi">4</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">((</span><span class="n">other</span><span class="o">.</span><span class="n">life</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span>
+<span class="w">  </span><span class="k">end</span>
+
+<span class="w">  </span><span class="c1"># lettuce will build your strength and extra ruffage</span>
+<span class="w">  </span><span class="c1"># will fly in the face of your opponent!!</span>
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">%</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+<span class="w">    </span><span class="n">lettuce</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">rand</span><span class="p">(</span><span class="n">charisma</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;[Healthy lettuce gives you </span><span class="si">#{</span><span class="n">lettuce</span><span class="si">}</span><span class="s2"> life points!!]&quot;</span>
+<span class="w">    </span><span class="vi">@life</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">lettuce</span>
+<span class="w">    </span><span class="n">fight</span><span class="p">(</span><span class="n">other</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">  </span><span class="k">end</span>
+
+<span class="w">  </span><span class="c1"># bombs, but you only have three!!</span>
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">*</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="vi">@bombs</span><span class="o">.</span><span class="n">zero?</span>
+<span class="w">      </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;[UHN!! You&#39;re out of bombs!!]&quot;</span>
+<span class="w">      </span><span class="k">return</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">    </span><span class="vi">@bombs</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="n">fight</span><span class="p">(</span><span class="n">other</span><span class="p">,</span><span class="w"> </span><span class="mi">86</span><span class="p">)</span>
+<span class="w">  </span><span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/justinsgithub" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/lovejustintyler" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/justinaawd" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.b425cdc4.min.js"></script>
+      
+        
+          <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
+        
+      
+        
+          <script src="../../../assets/termynal.js"></script>
+        
+      
+        
+          <script src="../../../assets/custom.js"></script>
+        
+      
+    
+  </body>
+</html>

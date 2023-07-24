@@ -1,0 +1,68 @@
+site_name: JustinDevelops
+site_description: JustinDevelops content notes
+site_url: https://docs.justintylers.com/
+site_dir: "docs"
+docs_dir: "markdown"
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: blue
+      accent: amber
+      toggle:
+        icon: material/lightbulb
+        name: Switch to light mode
+    - scheme: slate
+      primary: blue
+      accent: amber
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to dark mode
+  features:
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github-alt
+  language: en
+repo_name: justinsgithub/justindevelops
+repo_url: https://github.com/justinsgithub/justindevelops
+edit_uri: ""
+plugins:
+  - search
+nav:
+  - index.md
+  - Github:
+      - Github Pages: github/github-pages.md
+markdown_extensions:
+  - toc:
+      permalink: true
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - mdx_include:
+      base_path: src
+  - admonition
+  - codehilite
+  - extra
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class:
+            mermaid
+            #format: !!python/name:pymdownx.superfences.fence_code_format ''
+  - pymdownx.tabbed
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/justinsgithub
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/justintangeles
+
+extra_css:
+  - assets/termynal.css
+  - assets/custom.css
+
+extra_javascript:
+  - "https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"
+  - assets/termynal.js
+  - assets/custom.js
