@@ -303,9 +303,47 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Github Pages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Github Pages
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#publishing" class="md-nav__link">
+    Publishing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-custom-domain" class="md-nav__link">
+    Setting Custom Domain
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -338,6 +376,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#publishing" class="md-nav__link">
+    Publishing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-custom-domain" class="md-nav__link">
+    Setting Custom Domain
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -353,9 +413,13 @@
 
 <h1 id="github-pages">Github Pages<a class="headerlink" href="#github-pages" title="Permanent link">&para;</a></h1>
 <p>Host your own website for free, with custom domain using Github Pages</p>
+<h2 id="publishing">Publishing<a class="headerlink" href="#publishing" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Create a new repo</p>
+<ul>
+<li>if this is main website for your Github, repo name must be {username}.github.io</li>
+</ul>
 </li>
 <li>
 <p>Go to repo settings and go to pages</p>
@@ -364,6 +428,15 @@
 <p>Select branch and folder to publish from</p>
 <ul>
 <li>folder must be / (root) or /docs</li>
+</ul>
+</li>
+</ol>
+<h2 id="setting-custom-domain">Setting Custom Domain<a class="headerlink" href="#setting-custom-domain" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>edit DNS settings so that CNAME points to the github url (such as {username}.github.io)</p>
+<ul>
+<li>can also point to repository such as docs.justin-develops.com points to justinsgithub.github.io/justindevelops</li>
 </ul>
 </li>
 </ol>
