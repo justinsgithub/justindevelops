@@ -34,8 +34,8 @@ plugins:
   - search
 nav:
   - index.md
-  - Github:
-      - Github Pages: github/github-pages.md
+  - Software:
+      - Github Pages: software/github/pages/index.md
 markdown_extensions:
   - toc:
       permalink: true
