@@ -2,20 +2,56 @@
 
 Host your own website for free, with custom domain using Github Pages
 
-## Publishing
+## Create Website Repo
 
 1. Create a new repo
 
-    - if this is main website for your Github, repo name must be {username}.github.io
+    - if this is a user site for your Github, repo name must be {username}.github.io
 
-2. Go to repo settings and go to pages
+2. Decide if you want to publish website in / (root) or /docs
 
-3. Select branch and folder to publish from
+3. Place website files in chosen destination
+
+    - for example create file `docs/index.html` with the following content
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My Github Pages Site</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <h1>My Github Pages Site<h1>
+  </body>
+</html>
+```
+
+## Publishing
+
+1. Go to repo settings and go to pages
+
+2. Select branch and folder to publish from
 
     - folder must be / (root) or /docs
 
 ## Setting Custom Domain
 
-1. edit DNS settings so that CNAME points to the github url (such as {username}.github.io)
+1. Go to repo settings, go to pages, go to custom domain, enter desired domain (which you own)
 
-    - can also point to repository such as docs.justin-develops.com points to justinsgithub.github.io/justindevelops
+2. Make sure a `CNAME` file is in the publishing folder that contains the domain name you have chosen
+
+3. go to DNS provider (such as google domains) and edit DNS settings so that CNAME points to the github url (such as {username}.github.io)
+
+    - such as docs.justin-develops.com points to justinsgithub.github.io
+
+    - if using root domain (such as justin-develops.com), must point A to IP address and ALIAS to {username}.github.io
+
+    - should configure WWW subdomain as well if using root domain
+
+!!! warning
+
+    - may take a long time for changes with DNS provider to take effect (up to 24 hours)
+    - github pages will show an "improperly configured" error until the changes take effect
+    - will also take time for github to provision certs after domain check is successful

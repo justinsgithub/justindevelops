@@ -6,6 +6,7 @@ This site hosts the notes that outline the majority of my videos.
 ---
 
 !!! note
+
     This site was created 07 / 23 / 2023, so any notes for videos posted before this date will not be found here.
 
 ---

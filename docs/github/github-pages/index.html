@@ -125,9 +125,9 @@
             
             
             
-            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
             
-              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
               </label>
             
@@ -135,9 +135,9 @@
             
             
             
-            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
             
-              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
               </label>
             
@@ -328,6 +328,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#create-website-repo" class="md-nav__link">
+    Create Website Repo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#publishing" class="md-nav__link">
     Publishing
   </a>
@@ -383,6 +390,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#create-website-repo" class="md-nav__link">
+    Create Website Repo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#publishing" class="md-nav__link">
     Publishing
   </a>
@@ -413,14 +427,38 @@
 
 <h1 id="github-pages">Github Pages<a class="headerlink" href="#github-pages" title="Permanent link">&para;</a></h1>
 <p>Host your own website for free, with custom domain using Github Pages</p>
-<h2 id="publishing">Publishing<a class="headerlink" href="#publishing" title="Permanent link">&para;</a></h2>
+<h2 id="create-website-repo">Create Website Repo<a class="headerlink" href="#create-website-repo" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Create a new repo</p>
 <ul>
-<li>if this is main website for your Github, repo name must be {username}.github.io</li>
+<li>if this is a user site for your Github, repo name must be {username}.github.io</li>
 </ul>
 </li>
+<li>
+<p>Decide if you want to publish website in / (root) or /docs</p>
+</li>
+<li>
+<p>Place website files in chosen destination</p>
+<ul>
+<li>for example create file <code>docs/index.html</code> with the following content</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>My Github Pages Site<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>My Github Pages Site<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="publishing">Publishing<a class="headerlink" href="#publishing" title="Permanent link">&para;</a></h2>
+<ol>
 <li>
 <p>Go to repo settings and go to pages</p>
 </li>
@@ -434,12 +472,34 @@
 <h2 id="setting-custom-domain">Setting Custom Domain<a class="headerlink" href="#setting-custom-domain" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>edit DNS settings so that CNAME points to the github url (such as {username}.github.io)</p>
+<p>Go to repo settings, go to pages, go to custom domain, enter desired domain (which you own)</p>
+</li>
+<li>
+<p>Make sure a <code>CNAME</code> file is in the publishing folder that contains the domain name you have chosen</p>
+</li>
+<li>
+<p>go to DNS provider (such as google domains) and edit DNS settings so that CNAME points to the github url (such as {username}.github.io)</p>
 <ul>
-<li>can also point to repository such as docs.justin-develops.com points to justinsgithub.github.io/justindevelops</li>
+<li>
+<p>such as docs.justin-develops.com points to justinsgithub.github.io</p>
+</li>
+<li>
+<p>if using root domain (such as justin-develops.com), must point A to IP address and ALIAS to {username}.github.io</p>
+</li>
+<li>
+<p>should configure WWW subdomain as well if using root domain</p>
+</li>
 </ul>
 </li>
 </ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul>
+<li>may take a long time for changes with DNS provider to take effect (up to 24 hours)</li>
+<li>github pages will show an "improperly configured" error until the changes take effect</li>
+<li>will also take time for github to provision certs after domain check is successful</li>
+</ul>
+</div>
 
 
 
