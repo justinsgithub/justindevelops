@@ -44,11 +44,12 @@ Host your own website for free, with custom domain using Github Pages
 
 2. Make sure a `CNAME` file is in the publishing folder that contains the domain name you have chosen
 
-3. go to DNS provider (such as google domains) and edit DNS settings so that CNAME points to the github url (such as {username}.github.io)
+3. go to DNS provider (such as google domains) and edit DNS settings so that CNAME points to your Github pages url (such as {username}.github.io)
 
     - such as docs.justin-develops.com points to justinsgithub.github.io
 
     - if using root domain (such as justin-develops.com), must point A record to Github IP addresses
+
     ```
       185.199.108.153
       185.199.109.153
@@ -56,10 +57,55 @@ Host your own website for free, with custom domain using Github Pages
       185.199.111.153
     ```
 
-    - should configure WWW subdomain as well if using root domain
+    - you should configure WWW subdomain as well if using root domain
+
+    - use this command to check DNS configuration
+
+    ```sh
+      dig www.example.com +nostats +nocomments +nocmd
+    ```
 
 !!! warning
 
     - may take a long time for changes with DNS provider to take effect (up to 24 hours)
     - github pages will show an "improperly configured" error until the changes take effect
     - will also take time for github to provision certs after domain check is successful
+
+## Verify Custom Domain
+
+Verify your domain with Github for extra security and to prevent a domain takeover whenever your custom domain has any changes taking effect.
+
+1. click profile in top right and click on settings
+
+2. click on "pages" and click "add a domain"
+
+3. enter domain you would like to add and click "Add domain"
+
+4. create a TXT record and enter the host name that Github gives you
+
+    - it should look something like below:
+
+```
+_github-pages-challenge-{github_username}
+```
+
+5. enter the data for the TXT record that Github gives you
+
+    - it should be random numbers and letters similar to below:
+
+```
+bbfb463f444445452f4411558f84z6
+```
+
+6. give time for you DNS provider changes to take effect, then hit verify
+
+    - can take up to 24 hours, but 30 minutes to 1 hour has been my experience
+
+    - you can run this command to check if your DNS configuration has taken effect
+
+    ```sh
+    dig _github-pages-challenge-USERNAME.example.com +nostats +nocomments +nocmd TXT
+
+    # you should see your new TXT record in the output if changes, or some other random information if not
+    # _github-pages-challenge-USERNAME.example.com. 600 IN TXT "bbfb463f444445452f4411558f84z6"
+    ```
