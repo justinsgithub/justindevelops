@@ -37,8 +37,7 @@ nav:
   - Software:
       - Github Pages: software/github/pages/index.md
   - Lua:
-      - Intro: languages/lua/index.md
-      - Overview: languages/lua/overview.md
+      - Overview: languages/lua/index.md
 markdown_extensions:
   - toc:
       permalink: true

@@ -10,6 +10,9 @@ print(not false) --> true
 print(not 0) --> false
 print(not not nil) --> false
 
+print(false ==  nil) --> false
+print(false ==  0) --> false
+
 -- precedence
 --[[
 ^
@@ -21,8 +24,8 @@ not # - (unary)
 and
 or
 --]]
---
---
+
+
 a, b, c = 0, 1
 print(a, b, c) --> 0 1 nil
 
@@ -48,7 +51,7 @@ print(x) --> 10 (the global one)
 do
   local a = 2
   local d = 5
-  x1 = a - d -- assigned globally
+  X1 = a - d -- assigned globally
 end -- scope of ’a’ and ’d’ ends here
 
-print(x1)
+print(X1)

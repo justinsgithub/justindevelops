@@ -16,14 +16,12 @@
         <link rel="prev" href="../../software/github/pages/">
       
       
-        <link rel="next" href="overview/">
-      
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
     
     
       
-        <title>Intro - JustinDevelops</title>
+        <title>Overview - JustinDevelops</title>
       
     
     
@@ -114,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intro
+              Overview
             
           </span>
         </div>
@@ -355,12 +353,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Intro
+          Overview
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Intro
+        Overview
       </a>
       
         
@@ -427,24 +425,44 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+    <nav class="md-nav" aria-label="Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tables" class="md-nav__link">
+    Tables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-examples" class="md-nav__link">
+    Common Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="overview/" class="md-nav__link">
-        Overview
-      </a>
     </li>
   
 
@@ -528,6 +546,40 @@
   <a href="#learn" class="md-nav__link">
     Learn
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+    <nav class="md-nav" aria-label="Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tables" class="md-nav__link">
+    Tables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-examples" class="md-nav__link">
+    Common Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -628,6 +680,200 @@
 <p>progamming in Lua book, 1st edition, is free online <a href="https://www.lua.org/pil/contents.html">https://www.lua.org/pil/contents.html</a> , it covers Lua 5.0</p>
 </li>
 </ul>
+<h2 id="basics">Basics<a class="headerlink" href="#basics" title="Permanent link">&para;</a></h2>
+<p>You can Lua code with the Lua interpreter after installing Lua, or by using nvim with the <code>-l</code> option</p>
+<div class="highlight"><pre><span></span><code>lua<span class="w"> </span>my-script.lua
+
+<span class="c1"># or</span>
+
+nvim<span class="w"> </span>-l<span class="w"> </span>my-script.lua
+
+<span class="c1"># can also run interpreter after running script with -i (must have Lua installed)</span>
+lua<span class="w"> </span>-i<span class="w"> </span>my-script.lua
+</code></pre></div>
+<p>When running interactive interpreter, you can can rerun a file after making changes to it</p>
+<div class="highlight"><pre><span></span><code><span class="nb">dofile</span><span class="p">(</span><span class="s1">&#39;my-script.lua&#39;</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>
+<p>each piece of code Lua runs is known as a "chunk", which is basically any file that is loaded or ran in the interpreter</p>
+</li>
+<li>
+<p>reserved words</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="ow">and</span> <span class="kr">break</span> <span class="kr">do</span> <span class="kr">else</span> <span class="kr">elseif</span> <span class="kr">end</span> <span class="kc">false</span> <span class="kr">for</span> <span class="kr">function</span> <span class="nf">if</span> <span class="kr">in</span> <span class="kd">local</span> <span class="kc">nil</span> <span class="ow">not</span> <span class="ow">or</span> <span class="kr">repeat</span> <span class="kr">return</span> <span class="kr">then</span> <span class="kc">true</span> <span class="kr">until</span> <span class="kr">while</span>
+</code></pre></div>
+<ul>
+<li>identifiers in Lua can be any string of letters, digits, and underscores, not beginning with a digit</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">i10</span> <span class="o">=</span> <span class="s2">&quot;i10&quot;</span>
+<span class="kd">local</span> <span class="n">_ij</span> <span class="o">=</span> <span class="s2">&quot;_ij&quot;</span>
+<span class="kd">local</span> <span class="n">aSomewhatLongName</span> <span class="o">=</span> <span class="s2">&quot;a verbose variable name&quot;</span>
+<span class="c1">-- stylua: ignore</span>
+<span class="kd">local</span> <span class="n">i</span> <span class="o">=</span> <span class="s2">&quot;i&quot;</span> <span class="kd">local</span> <span class="n">j</span> <span class="o">=</span> <span class="s2">&quot;j&quot;</span> <span class="c1">-- legal, lua doesn&#39;t care about line breaks (\n)</span>
+
+<span class="c1">-- BAD, underscore followed by 1 or more capital letters are reserved for Lua</span>
+<span class="kd">local</span> <span class="n">_BADVARNAME</span> <span class="o">=</span> <span class="s2">&quot;don&#39;t use this format&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i10</span><span class="p">,</span> <span class="n">_ij</span><span class="p">,</span> <span class="n">aSomewhatLongName</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">_BADVARNAME</span><span class="p">)</span>
+
+<span class="c1">-- use _ for dummy var</span>
+<span class="kd">local</span> <span class="n">dummyvar</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">autoparams</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">autoparams</span><span class="p">)</span>
+    <span class="n">Global_variable</span> <span class="o">=</span> <span class="s2">&quot;start globals with capital letter&quot;</span>
+<span class="kr">end</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Global_variable</span><span class="p">)</span> <span class="c1">-- nil</span>
+
+<span class="n">dummyvar</span><span class="p">(</span><span class="s2">&quot;ignoring this&quot;</span><span class="p">,</span> <span class="s2">&quot;using this&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Global_variable</span><span class="p">)</span>
+
+<span class="cm">--[[ multiline comment</span>
+<span class="cm">  print(&quot;comment trick&quot;)</span>
+<span class="cm">--]]</span>
+
+<span class="kd">local</span> <span class="n">page</span> <span class="o">=</span> <span class="s">[[</span>
+<span class="s">&lt;html&gt;</span>
+<span class="s">&lt;head&gt;</span>
+<span class="s">&lt;title&gt;An HTML Page&lt;/title&gt;</span>
+<span class="s">&lt;/head&gt;</span>
+<span class="s">&lt;body&gt;</span>
+<span class="s">&lt;a href=&quot;http://www.lua.org&quot;&gt;Lua&lt;/a&gt;</span>
+<span class="s">&lt;/body&gt;</span>
+<span class="s">&lt;/html&gt;</span>
+<span class="s">]]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+
+<span class="c1">-- add equal signs to change delimiter</span>
+<span class="kd">local</span> <span class="n">page_with_brackets</span> <span class="o">=</span> <span class="s">[==[</span>
+<span class="s">&lt;html&gt;</span>
+<span class="s">&lt;head&gt;</span>
+<span class="s">&lt;title&gt;An HTML Page&lt;/title&gt;</span>
+<span class="s">&lt;/head&gt;</span>
+<span class="s">&lt;body&gt;</span>
+<span class="s">DOESNT END ]]</span>
+<span class="s">&lt;a href=&quot;http://www.lua.org&quot;&gt;Lua&lt;/a&gt;</span>
+<span class="s">&lt;/body&gt;</span>
+<span class="s">&lt;/html&gt;</span>
+<span class="s">]==]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">page_with_brackets</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- thread and userdata are also types</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">))</span> <span class="c1">--&gt; string</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">10.4</span> <span class="o">*</span> <span class="mi">3</span><span class="p">))</span> <span class="c1">--&gt; number</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nb">print</span><span class="p">))</span> <span class="c1">--&gt; function</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nb">type</span><span class="p">))</span> <span class="c1">--&gt; function</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="kc">true</span><span class="p">))</span> <span class="c1">--&gt; boolean</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="kc">nil</span><span class="p">))</span> <span class="c1">--&gt; nil</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)))</span> <span class="c1">--&gt; string</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">({}))</span>
+</code></pre></div>
+<h3 id="tables">Tables<a class="headerlink" href="#tables" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>the only data-structuring machanism in Lua</p>
+</li>
+<li>
+<p>used to represent other data-structures like lists, dicts, objs, modules, packages</p>
+</li>
+<li>
+<p>avoid using lists with empty indices</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">mytable</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">mytable</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;this&#39;</span>
+<span class="n">mytable</span><span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;that&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">mytable</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="n">mylist</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="kr">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span> <span class="kr">do</span>
+  <span class="n">mylist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tostring</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="kd">local</span> <span class="n">mylist_length</span> <span class="o">=</span> <span class="o">#</span><span class="n">mylist</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist_length</span><span class="p">)</span> <span class="c1">--&gt; 10</span>
+
+<span class="kd">local</span> <span class="n">table_len</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">table_len</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;ten&quot;</span>
+<span class="n">table_len</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;ten&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="o">#</span><span class="n">table_len</span><span class="p">)</span> <span class="c1">-- returns 0 because assumes any nil index indicates end of array</span>
+
+<span class="c1">-- not 0 indexed</span>
+<span class="kd">local</span> <span class="n">array_constructor</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="s2">&quot;6&quot;</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array_constructor</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="n">record_table</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">}</span>
+<span class="n">record_table</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;one&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">record_table</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div>
+<h3 id="common-examples">Common Examples<a class="headerlink" href="#common-examples" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- arithmetic operators</span>
+<span class="c1">-- + - (minus and negation) * / ^(exponent) % (modulo)</span>
+<span class="c1">-- relational operators</span>
+<span class="c1">-- &lt; &gt; &lt;= &gt;= == ~=</span>
+<span class="c1">-- logical operators</span>
+<span class="c1">-- not and or</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="kc">nil</span><span class="p">)</span> <span class="c1">--&gt; true</span>
+<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="kc">false</span><span class="p">)</span> <span class="c1">--&gt; true</span>
+<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">--&gt; false</span>
+<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="ow">not</span> <span class="kc">nil</span><span class="p">)</span> <span class="c1">--&gt; false</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="kc">false</span> <span class="o">==</span>  <span class="kc">nil</span><span class="p">)</span> <span class="c1">--&gt; false</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">false</span> <span class="o">==</span>  <span class="mi">0</span><span class="p">)</span> <span class="c1">--&gt; false</span>
+
+<span class="c1">-- precedence</span>
+<span class="cm">--[[</span>
+<span class="cm">^</span>
+<span class="cm">not # - (unary)</span>
+<span class="cm">* / %</span>
+<span class="cm">+ -</span>
+<span class="cm">..</span>
+<span class="cm">&lt; &gt; &lt;= &gt;= ~= ==</span>
+<span class="cm">and</span>
+<span class="cm">or</span>
+<span class="cm">--]]</span>
+
+
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="c1">--&gt; 0 1 nil</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="kd">local</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">-- local to the chunk</span>
+<span class="kr">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="kr">do</span>
+  <span class="kd">local</span> <span class="n">x</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="mi">2</span> <span class="c1">-- local to the while body</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">--&gt; 2, 4, 6, 8, ...</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="kr">end</span>
+
+<span class="kr">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">20</span> <span class="kr">then</span>
+  <span class="kd">local</span> <span class="n">x</span> <span class="c1">-- local to the &quot;then&quot; body</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">-- (would print 22 if test succeeded)</span>
+<span class="kr">else</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">--&gt; 10 (the global one)</span>
+<span class="kr">end</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">--&gt; 10 (the global one)</span>
+
+<span class="kr">do</span>
+  <span class="kd">local</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+  <span class="kd">local</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">5</span>
+  <span class="n">X1</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">d</span> <span class="c1">-- assigned globally</span>
+<span class="kr">end</span> <span class="c1">-- scope of ’a’ and ’d’ ends here</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">X1</span><span class="p">)</span>
+</code></pre></div>
 
 
 

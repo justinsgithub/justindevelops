@@ -60,3 +60,62 @@
 - reference manual [https://www.lua.org/manual/5.1](https://www.lua.org/manual/5.1)
 
 - progamming in Lua book, 1st edition, is free online [https://www.lua.org/pil/contents.html](https://www.lua.org/pil/contents.html) , it covers Lua 5.0
+
+## Basics
+
+You can Lua code with the Lua interpreter after installing Lua, or by using nvim with the `-l` option
+
+```sh
+lua my-script.lua
+
+# or
+
+nvim -l my-script.lua
+
+# can also run interpreter after running script with -i (must have Lua installed)
+lua -i my-script.lua
+```
+
+When running interactive interpreter, you can can rerun a file after making changes to it
+
+```lua
+dofile('my-script.lua')
+```
+
+- each piece of code Lua runs is known as a "chunk", which is basically any file that is loaded or ran in the interpreter
+
+- reserved words
+
+```lua
+and break do else elseif end false for function if in local nil not or repeat return then true until while
+```
+
+- identifiers in Lua can be any string of letters, digits, and underscores, not beginning with a digit
+
+```lua
+{! languages/lua/overview/basics.lua !}
+```
+
+### Types
+
+```lua
+{! languages/lua/overview/types.lua !}
+```
+
+### Tables
+
+- the only data-structuring machanism in Lua
+
+- used to represent other data-structures like lists, dicts, objs, modules, packages
+
+- avoid using lists with empty indices
+
+```lua
+{! languages/lua/overview/table.lua !}
+```
+
+### Common Examples
+
+```lua
+{! languages/lua/overview/examples.lua !}
+```
