@@ -1,5 +1,7 @@
 # Github Pages
 
+<!-- Video:[]() -->
+
 Host your own website for free, with custom domain using Github Pages
 
 ## Create Website Repo
@@ -46,7 +48,13 @@ Host your own website for free, with custom domain using Github Pages
 
     - such as docs.justin-develops.com points to justinsgithub.github.io
 
-    - if using root domain (such as justin-develops.com), must point A to IP address and ALIAS to {username}.github.io
+    - if using root domain (such as justin-develops.com), must point A record to Github IP addresses
+    ```
+      185.199.108.153
+      185.199.109.153
+      185.199.110.153
+      185.199.111.153
+    ```
 
     - should configure WWW subdomain as well if using root domain
 
