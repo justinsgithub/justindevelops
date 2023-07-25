@@ -16,6 +16,8 @@
         <link rel="prev" href="../../..">
       
       
+        <link rel="next" href="../../../languages/lua/">
+      
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
     
@@ -348,10 +350,80 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#verify-custom-domain" class="md-nav__link">
+    Verify Custom Domain
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Lua
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Lua
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/lua/" class="md-nav__link">
+        Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/lua/overview/" class="md-nav__link">
+        Overview
+      </a>
     </li>
   
 
@@ -410,6 +482,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#verify-custom-domain" class="md-nav__link">
+    Verify Custom Domain
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -426,6 +505,8 @@
 
 
 <h1 id="github-pages">Github Pages<a class="headerlink" href="#github-pages" title="Permanent link">&para;</a></h1>
+<!-- Video:[]() -->
+
 <p>Host your own website for free, with custom domain using Github Pages</p>
 <h2 id="create-website-repo">Create Website Repo<a class="headerlink" href="#create-website-repo" title="Permanent link">&para;</a></h2>
 <ol>
@@ -478,18 +559,30 @@
 <p>Make sure a <code>CNAME</code> file is in the publishing folder that contains the domain name you have chosen</p>
 </li>
 <li>
-<p>go to DNS provider (such as google domains) and edit DNS settings so that CNAME points to the github url (such as {username}.github.io)</p>
+<p>go to DNS provider (such as google domains) and edit DNS settings so that CNAME points to your Github pages url (such as {username}.github.io)</p>
 <ul>
 <li>
 <p>such as docs.justin-develops.com points to justinsgithub.github.io</p>
 </li>
 <li>
-<p>if using root domain (such as justin-develops.com), must point A to IP address and ALIAS to {username}.github.io</p>
-</li>
-<li>
-<p>should configure WWW subdomain as well if using root domain</p>
+<p>if using root domain (such as justin-develops.com), must point A record to Github IP addresses</p>
 </li>
 </ul>
+<div class="highlight"><pre><span></span><code>  185.199.108.153
+  185.199.109.153
+  185.199.110.153
+  185.199.111.153
+</code></pre></div>
+<ul>
+<li>
+<p>you should configure WWW subdomain as well if using root domain</p>
+</li>
+<li>
+<p>use this command to check DNS configuration</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">  </span>dig<span class="w"> </span>www.example.com<span class="w"> </span>+nostats<span class="w"> </span>+nocomments<span class="w"> </span>+nocmd
+</code></pre></div>
 </li>
 </ol>
 <div class="admonition warning">
@@ -500,6 +593,55 @@
 <li>will also take time for github to provision certs after domain check is successful</li>
 </ul>
 </div>
+<h2 id="verify-custom-domain">Verify Custom Domain<a class="headerlink" href="#verify-custom-domain" title="Permanent link">&para;</a></h2>
+<p>Verify your domain with Github for extra security and to prevent a domain takeover whenever your custom domain has any changes taking effect.</p>
+<ol>
+<li>
+<p>click profile in top right and click on settings</p>
+</li>
+<li>
+<p>click on "pages" and click "add a domain"</p>
+</li>
+<li>
+<p>enter domain you would like to add and click "Add domain"</p>
+</li>
+<li>
+<p>create a TXT record and enter the host name that Github gives you</p>
+<ul>
+<li>it should look something like below:</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>_github-pages-challenge-{github_username}
+</code></pre></div>
+<ol>
+<li>
+<p>enter the data for the TXT record that Github gives you</p>
+<ul>
+<li>it should be random numbers and letters similar to below:</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>bbfb463f444445452f4411558f84z6
+</code></pre></div>
+<ol>
+<li>
+<p>give time for you DNS provider changes to take effect, then hit verify</p>
+<ul>
+<li>
+<p>can take up to 24 hours, but 30 minutes to 1 hour has been my experience</p>
+</li>
+<li>
+<p>you can run this command to check if your DNS configuration has taken effect</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>dig<span class="w"> </span>_github-pages-challenge-USERNAME.example.com<span class="w"> </span>+nostats<span class="w"> </span>+nocomments<span class="w"> </span>+nocmd<span class="w"> </span>TXT
+
+<span class="c1"># you should see your new TXT record in the output if changes, or some other random information if not</span>
+<span class="c1"># _github-pages-challenge-USERNAME.example.com. 600 IN TXT &quot;bbfb463f444445452f4411558f84z6&quot;</span>
+</code></pre></div>
+</li>
+</ol>
 
 
 
