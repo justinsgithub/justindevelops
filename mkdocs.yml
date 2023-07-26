@@ -41,29 +41,34 @@ nav:
   - Software:
       - Github Pages: software/github/pages/index.md
 markdown_extensions:
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed
+  - admonition
+  - codehilite
+  - extra
   - toc:
       permalink: true
   - markdown.extensions.codehilite:
       guess_lang: false
   - mdx_include:
       base_path: src
-  - admonition
-  - codehilite
-  - extra
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class:
             mermaid
             #format: !!python/name:pymdownx.superfences.fence_code_format ''
-  - pymdownx.tabbed
 extra:
   social:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/justinsgithub
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/justintangeles
-
 extra_css:
   - assets/termynal.css
   - assets/custom.css
