@@ -61,9 +61,12 @@ Host your own website for free, with custom domain using GitHub Pages
 
     - use this command to check DNS configuration
 
-    ```sh
-      dig www.example.com +nostats +nocomments +nocmd
-    ```
+<div class="termy">
+
+```sh
+$ dig www.example.com +nostats +nocomments +nocmd
+```
+</div>
 
 !!! warning
 
@@ -85,17 +88,17 @@ Verify your domain with GitHub for extra security and to prevent a domain takeov
 
     - it should look something like below:
 
-```
-_github-pages-challenge-{github_username}
-```
+    ```
+    _github-pages-challenge-{github_username}
+    ```
 
 5. enter the data for the TXT record that GitHub gives you
 
     - it should be random numbers and letters similar to below:
 
-```
-bbfb463f444445452f4411558f84z6
-```
+    ```
+    bbfb463f444445452f4411558f84z6
+    ```
 
 6. give time for you DNS provider changes to take effect, then hit verify
 
@@ -103,9 +106,14 @@ bbfb463f444445452f4411558f84z6
 
     - you can run this command to check if your DNS configuration has taken effect
 
-    ```sh
-    dig _github-pages-challenge-USERNAME.example.com +nostats +nocomments +nocmd TXT
+<div class="termy">
 
-    # you should see your new TXT record in the output if changes, or some other random information if not
-    # _github-pages-challenge-USERNAME.example.com. 600 IN TXT "bbfb463f444445452f4411558f84z6"
-    ```
+```sh
+dig _github-pages-challenge-USERNAME.example.com +nostats +nocomments +nocmd TXT
+
+```
+</div>
+
+    - you should see your new TXT record in the output if changes have taken effect 
+
+    - or some other random information if not

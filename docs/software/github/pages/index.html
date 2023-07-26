@@ -613,10 +613,14 @@
 <p>use this command to check DNS configuration</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="w">  </span>dig<span class="w"> </span>www.example.com<span class="w"> </span>+nostats<span class="w"> </span>+nocomments<span class="w"> </span>+nocmd
-</code></pre></div>
 </li>
 </ol>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dig<span class="w"> </span>www.example.com<span class="w"> </span>+nostats<span class="w"> </span>+nocomments<span class="w"> </span>+nocmd
+</code></pre></div>
+</div>
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <ul>
@@ -642,21 +646,17 @@
 <ul>
 <li>it should look something like below:</li>
 </ul>
-</li>
-</ol>
 <div class="highlight"><pre><span></span><code>_github-pages-challenge-{github_username}
 </code></pre></div>
-<ol>
+</li>
 <li>
 <p>enter the data for the TXT record that GitHub gives you</p>
 <ul>
 <li>it should be random numbers and letters similar to below:</li>
 </ul>
-</li>
-</ol>
 <div class="highlight"><pre><span></span><code>bbfb463f444445452f4411558f84z6
 </code></pre></div>
-<ol>
+</li>
 <li>
 <p>give time for you DNS provider changes to take effect, then hit verify</p>
 <ul>
@@ -667,13 +667,18 @@
 <p>you can run this command to check if your DNS configuration has taken effect</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code>dig<span class="w"> </span>_github-pages-challenge-USERNAME.example.com<span class="w"> </span>+nostats<span class="w"> </span>+nocomments<span class="w"> </span>+nocmd<span class="w"> </span>TXT
-
-<span class="c1"># you should see your new TXT record in the output if changes, or some other random information if not</span>
-<span class="c1"># _github-pages-challenge-USERNAME.example.com. 600 IN TXT &quot;bbfb463f444445452f4411558f84z6&quot;</span>
-</code></pre></div>
 </li>
 </ol>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>dig<span class="w"> </span>_github-pages-challenge-USERNAME.example.com<span class="w"> </span>+nostats<span class="w"> </span>+nocomments<span class="w"> </span>+nocmd<span class="w"> </span>TXT
+</code></pre></div>
+</div>
+
+<div class="codehilite"><pre><span></span><code><span class="o">-</span><span class="w"> </span><span class="nv">you</span><span class="w"> </span><span class="nv">should</span><span class="w"> </span><span class="nv">see</span><span class="w"> </span><span class="nv">your</span><span class="w"> </span><span class="nv">new</span><span class="w"> </span><span class="nv">TXT</span><span class="w"> </span><span class="nv">record</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">output</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">changes</span><span class="w"> </span><span class="nv">have</span><span class="w"> </span><span class="nv">taken</span><span class="w"> </span><span class="nv">effect</span>
+
+<span class="o">-</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="nv">some</span><span class="w"> </span><span class="nv">other</span><span class="w"> </span><span class="k">random</span><span class="w"> </span><span class="nv">information</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">not</span>
+</code></pre></div>
 
 
 
