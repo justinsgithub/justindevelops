@@ -1,6 +1,7 @@
 local i10 = "i10"
 local _ij = "_ij"
 local aSomewhatLongName = "a verbose variable name"
+
 -- stylua: ignore
 local i = "i" local j = "j" -- legal, lua doesn't care about line breaks (\n)
 
@@ -22,7 +23,7 @@ dummyvar("ignoring this", "using this")
 print(Global_variable)
 
 --[[ multiline comment
-  print("comment trick")
+print("comment trick")
 --]]
 
 local page = [[
@@ -39,7 +40,7 @@ local page = [[
 print(page)
 
 -- add equal signs to change delimiter
-local page_with_brackets = [==[
+local page_with_brackets = [===[
 <html>
 <head>
 <title>An HTML Page</title>
@@ -49,6 +50,6 @@ DOESNT END ]]
 <a href="http://www.lua.org">Lua</a>
 </body>
 </html>
-]==]
+]===]
 
 print(page_with_brackets)

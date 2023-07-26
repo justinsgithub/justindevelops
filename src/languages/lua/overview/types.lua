@@ -7,3 +7,7 @@ print(type(true)) --> boolean
 print(type(nil)) --> nil
 print(type(type("Hello World"))) --> string
 print(type({}))
+
+function Myfunc(param)
+	print("your arg is " .. param)
+end

@@ -34,10 +34,12 @@ plugins:
   - search
 nav:
   - index.md
-  - Software:
-      - Github Pages: software/github/pages/index.md
   - Lua:
       - Overview: languages/lua/index.md
+  - Prisma:
+      - Next.js API: software/prisma/nextjs-api.md
+  - Software:
+      - Github Pages: software/github/pages/index.md
 markdown_extensions:
   - toc:
       permalink: true

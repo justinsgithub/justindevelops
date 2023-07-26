@@ -1,14 +1,14 @@
-# Github Pages
+# GitHub Pages
 
-<!-- Video:[]() -->
+Domain Verification Video: [https://www.youtube.com/watch?v=qleBf7HxPPM](https://www.youtube.com/watch?v=qleBf7HxPPM)
 
-Host your own website for free, with custom domain using Github Pages
+Host your own website for free, with custom domain using GitHub Pages
 
 ## Create Website Repo
 
 1. Create a new repo
 
-    - if this is a user site for your Github, repo name must be {username}.github.io
+    - if this is a user site for your GitHub, repo name must be {username}.github.io
 
 2. Decide if you want to publish website in / (root) or /docs
 
@@ -20,12 +20,12 @@ Host your own website for free, with custom domain using Github Pages
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>My Github Pages Site</title>
+    <title>My GitHub Pages Site</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <h1>My Github Pages Site<h1>
+    <h1>My GitHub Pages Site<h1>
   </body>
 </html>
 ```
@@ -44,11 +44,11 @@ Host your own website for free, with custom domain using Github Pages
 
 2. Make sure a `CNAME` file is in the publishing folder that contains the domain name you have chosen
 
-3. go to DNS provider (such as google domains) and edit DNS settings so that CNAME points to your Github pages url (such as {username}.github.io)
+3. go to DNS provider (such as google domains) and edit DNS settings so that CNAME points to your GitHub pages url (such as {username}.github.io)
 
     - such as docs.justin-develops.com points to justinsgithub.github.io
 
-    - if using root domain (such as justin-develops.com), must point A record to Github IP addresses
+    - if using root domain (such as justin-develops.com), must point A record to GitHub IP addresses
 
     ```
       185.199.108.153
@@ -73,7 +73,7 @@ Host your own website for free, with custom domain using Github Pages
 
 ## Verify Custom Domain
 
-Verify your domain with Github for extra security and to prevent a domain takeover whenever your custom domain has any changes taking effect.
+Verify your domain with GitHub for extra security and to prevent a domain takeover whenever your custom domain has any changes taking effect.
 
 1. click profile in top right and click on settings
 
@@ -81,7 +81,7 @@ Verify your domain with Github for extra security and to prevent a domain takeov
 
 3. enter domain you would like to add and click "Add domain"
 
-4. create a TXT record and enter the host name that Github gives you
+4. create a TXT record and enter the host name that GitHub gives you
 
     - it should look something like below:
 
@@ -89,7 +89,7 @@ Verify your domain with Github for extra security and to prevent a domain takeov
 _github-pages-challenge-{github_username}
 ```
 
-5. enter the data for the TXT record that Github gives you
+5. enter the data for the TXT record that GitHub gives you
 
     - it should be random numbers and letters similar to below:
 
