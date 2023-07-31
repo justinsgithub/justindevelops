@@ -2,22 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.justintylers.com/</loc>
-         <lastmod>2023-07-26</lastmod>
+         <lastmod>2023-07-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/languages/lua/</loc>
-         <lastmod>2023-07-26</lastmod>
+         <lastmod>2023-07-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/github/pages/</loc>
-         <lastmod>2023-07-26</lastmod>
+         <lastmod>2023-07-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/prisma/nextjs-api/</loc>
-         <lastmod>2023-07-26</lastmod>
+         <lastmod>2023-07-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

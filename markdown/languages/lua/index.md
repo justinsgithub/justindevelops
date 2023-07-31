@@ -44,14 +44,25 @@
  
 - example script for linux to build from source
 
-```lua
+<div class="termy">
+
+```sh
+
 {! languages/lua/install.sh !}
 ```
+</div>
 
 - instructions to build from source on windows [ http://lua-users.org/wiki/BuildingLuaInWindowsForNewbies ](http://lua-users.org/wiki/BuildingLuaInWindowsForNewbies)
 - install with package manager
 
-`sudo apt install lua5.1`
+<div class="termy">
+
+```sh
+
+sudo apt install lua5.1
+
+```
+</div>
 
 - use the live demo online [https://www.lua.org/cgi-bin/demo](https://www.lua.org/cgi-bin/demo)
 

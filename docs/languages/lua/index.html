@@ -16,7 +16,7 @@
         <link rel="prev" href="../..">
       
       
-        <link rel="next" href="../../software/prisma/nextjs-api/">
+        <link rel="next" href="../../software/github/pages/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
@@ -445,61 +445,12 @@
       
       
         <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          Prisma
+          Software
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
-          Prisma
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../software/prisma/nextjs-api/" class="md-nav__link">
-        Next.js API
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-          Software
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Software
         </label>
@@ -709,16 +660,25 @@
 <p>example script for linux to build from source</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">curl</span> <span class="o">-</span><span class="n">R</span> <span class="o">-</span><span class="n">O</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">lua</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">lua</span><span class="o">-</span><span class="mf">5.4.6</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
-<span class="n">tar</span> <span class="n">zxf</span> <span class="n">lua</span><span class="o">-</span><span class="mf">5.4.6</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
-<span class="n">cd</span> <span class="n">lua</span><span class="o">-</span><span class="mf">5.4.6</span>
-<span class="n">make</span> <span class="n">all</span> <span class="n">test</span>
-</code></pre></div>
+<div class="termy">
+
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-R<span class="w"> </span>-O<span class="w"> </span>http://www.lua.org/ftp/lua-5.4.6.tar.gz
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>tar<span class="w"> </span>zxf<span class="w"> </span>lua-5.4.6.tar.gz
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>lua-5.4.6
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>make<span class="w"> </span>all<span class="w"> </span><span class="nb">test</span>
+</span></code></pre></div>
+</div>
+
 <ul>
 <li>instructions to build from source on windows <a href="http://lua-users.org/wiki/BuildingLuaInWindowsForNewbies"> http://lua-users.org/wiki/BuildingLuaInWindowsForNewbies </a></li>
 <li>install with package manager</li>
 </ul>
-<p><code>sudo apt install lua5.1</code></p>
+<div class="termy">
+
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>lua5.1
+</span></code></pre></div>
+</div>
+
 <ul>
 <li>use the live demo online <a href="https://www.lua.org/cgi-bin/demo">https://www.lua.org/cgi-bin/demo</a></li>
 </ul>
@@ -733,18 +693,18 @@
 </ul>
 <h2 id="basics">Basics<a class="headerlink" href="#basics" title="Permanent link">&para;</a></h2>
 <p>You can Lua code with the Lua interpreter after installing Lua, or by using nvim with the <code>-l</code> option</p>
-<div class="highlight"><pre><span></span><code>lua<span class="w"> </span>my-script.lua
-
-<span class="c1"># or</span>
-
-nvim<span class="w"> </span>-l<span class="w"> </span>my-script.lua
-
-<span class="c1"># can also run interpreter after running script with -i (must have Lua installed)</span>
-lua<span class="w"> </span>-i<span class="w"> </span>my-script.lua
-</code></pre></div>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>lua<span class="w"> </span>my-script.lua
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># or</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>nvim<span class="w"> </span>-l<span class="w"> </span>my-script.lua
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># can also run interpreter after running script with -i (must have Lua installed)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>lua<span class="w"> </span>-i<span class="w"> </span>my-script.lua
+</span></code></pre></div>
 <p>When running interactive interpreter, you can can rerun a file after making changes to it</p>
-<div class="highlight"><pre><span></span><code><span class="nb">dofile</span><span class="p">(</span><span class="s1">&#39;my-script.lua&#39;</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">dofile</span><span class="p">(</span><span class="s1">&#39;my-script.lua&#39;</span><span class="p">)</span>
+</span></code></pre></div>
 <ul>
 <li>
 <p>each piece of code Lua runs is known as a "chunk", which is basically any file that is loaded or ran in the interpreter</p>
@@ -753,82 +713,82 @@ lua<span class="w"> </span>-i<span class="w"> </span>my-script.lua
 <p>reserved words</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="ow">and</span> <span class="kr">break</span> <span class="kr">do</span> <span class="kr">else</span> <span class="kr">elseif</span> <span class="kr">end</span> <span class="kc">false</span> <span class="kr">for</span> <span class="kr">function</span> <span class="nf">if</span> <span class="kr">in</span> <span class="kd">local</span> <span class="kc">nil</span> <span class="ow">not</span> <span class="ow">or</span> <span class="kr">repeat</span> <span class="kr">return</span> <span class="kr">then</span> <span class="kc">true</span> <span class="kr">until</span> <span class="kr">while</span>
-</code></pre></div>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="ow">and</span> <span class="kr">break</span> <span class="kr">do</span> <span class="kr">else</span> <span class="kr">elseif</span> <span class="kr">end</span> <span class="kc">false</span> <span class="kr">for</span> <span class="kr">function</span> <span class="nf">if</span> <span class="kr">in</span> <span class="kd">local</span> <span class="kc">nil</span> <span class="ow">not</span> <span class="ow">or</span> <span class="kr">repeat</span> <span class="kr">return</span> <span class="kr">then</span> <span class="kc">true</span> <span class="kr">until</span> <span class="kr">while</span>
+</span></code></pre></div>
 <ul>
 <li>identifiers in Lua can be any string of letters, digits, and underscores, not beginning with a digit</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">i10</span> <span class="o">=</span> <span class="s2">&quot;i10&quot;</span>
-<span class="kd">local</span> <span class="n">_ij</span> <span class="o">=</span> <span class="s2">&quot;_ij&quot;</span>
-<span class="kd">local</span> <span class="n">aSomewhatLongName</span> <span class="o">=</span> <span class="s2">&quot;a verbose variable name&quot;</span>
-
-<span class="c1">-- stylua: ignore</span>
-<span class="kd">local</span> <span class="n">i</span> <span class="o">=</span> <span class="s2">&quot;i&quot;</span> <span class="kd">local</span> <span class="n">j</span> <span class="o">=</span> <span class="s2">&quot;j&quot;</span> <span class="c1">-- legal, lua doesn&#39;t care about line breaks (\n)</span>
-
-<span class="c1">-- BAD, underscore followed by 1 or more capital letters are reserved for Lua</span>
-<span class="kd">local</span> <span class="n">_BADVARNAME</span> <span class="o">=</span> <span class="s2">&quot;don&#39;t use this format&quot;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i10</span><span class="p">,</span> <span class="n">_ij</span><span class="p">,</span> <span class="n">aSomewhatLongName</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">_BADVARNAME</span><span class="p">)</span>
-
-<span class="c1">-- use _ for dummy var</span>
-<span class="kd">local</span> <span class="n">dummyvar</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">autoparams</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">autoparams</span><span class="p">)</span>
-    <span class="n">Global_variable</span> <span class="o">=</span> <span class="s2">&quot;start globals with capital letter&quot;</span>
-<span class="kr">end</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">Global_variable</span><span class="p">)</span> <span class="c1">-- nil</span>
-
-<span class="n">dummyvar</span><span class="p">(</span><span class="s2">&quot;ignoring this&quot;</span><span class="p">,</span> <span class="s2">&quot;using this&quot;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">Global_variable</span><span class="p">)</span>
-
-<span class="cm">--[[ multiline comment</span>
-<span class="cm">print(&quot;comment trick&quot;)</span>
-<span class="cm">--]]</span>
-
-<span class="kd">local</span> <span class="n">page</span> <span class="o">=</span> <span class="s">[[</span>
-<span class="s">&lt;html&gt;</span>
-<span class="s">&lt;head&gt;</span>
-<span class="s">&lt;title&gt;An HTML Page&lt;/title&gt;</span>
-<span class="s">&lt;/head&gt;</span>
-<span class="s">&lt;body&gt;</span>
-<span class="s">&lt;a href=&quot;http://www.lua.org&quot;&gt;Lua&lt;/a&gt;</span>
-<span class="s">&lt;/body&gt;</span>
-<span class="s">&lt;/html&gt;</span>
-<span class="s">]]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
-
-<span class="c1">-- add equal signs to change delimiter</span>
-<span class="kd">local</span> <span class="n">page_with_brackets</span> <span class="o">=</span> <span class="s">[===[</span>
-<span class="s">&lt;html&gt;</span>
-<span class="s">&lt;head&gt;</span>
-<span class="s">&lt;title&gt;An HTML Page&lt;/title&gt;</span>
-<span class="s">&lt;/head&gt;</span>
-<span class="s">&lt;body&gt;</span>
-<span class="s">DOESNT END ]]</span>
-<span class="s">&lt;a href=&quot;http://www.lua.org&quot;&gt;Lua&lt;/a&gt;</span>
-<span class="s">&lt;/body&gt;</span>
-<span class="s">&lt;/html&gt;</span>
-<span class="s">]===]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">page_with_brackets</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">local</span> <span class="n">i10</span> <span class="o">=</span> <span class="s2">&quot;i10&quot;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">local</span> <span class="n">_ij</span> <span class="o">=</span> <span class="s2">&quot;_ij&quot;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kd">local</span> <span class="n">aSomewhatLongName</span> <span class="o">=</span> <span class="s2">&quot;a verbose variable name&quot;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1">-- stylua: ignore</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="kd">local</span> <span class="n">i</span> <span class="o">=</span> <span class="s2">&quot;i&quot;</span> <span class="kd">local</span> <span class="n">j</span> <span class="o">=</span> <span class="s2">&quot;j&quot;</span> <span class="c1">-- legal, lua doesn&#39;t care about line breaks (\n)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1">-- BAD, underscore followed by 1 or more capital letters are reserved for Lua</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="kd">local</span> <span class="n">_BADVARNAME</span> <span class="o">=</span> <span class="s2">&quot;don&#39;t use this format&quot;</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i10</span><span class="p">,</span> <span class="n">_ij</span><span class="p">,</span> <span class="n">aSomewhatLongName</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">_BADVARNAME</span><span class="p">)</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="c1">-- use _ for dummy var</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="kd">local</span> <span class="n">dummyvar</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">autoparams</span><span class="p">)</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">autoparams</span><span class="p">)</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    <span class="n">Global_variable</span> <span class="o">=</span> <span class="s2">&quot;start globals with capital letter&quot;</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="kr">end</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="nb">print</span><span class="p">(</span><span class="n">Global_variable</span><span class="p">)</span> <span class="c1">-- nil</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="n">dummyvar</span><span class="p">(</span><span class="s2">&quot;ignoring this&quot;</span><span class="p">,</span> <span class="s2">&quot;using this&quot;</span><span class="p">)</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="nb">print</span><span class="p">(</span><span class="n">Global_variable</span><span class="p">)</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="cm">--[[ multiline comment</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="cm">print(&quot;comment trick&quot;)</span>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="cm">--]]</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="kd">local</span> <span class="n">page</span> <span class="o">=</span> <span class="s">[[</span>
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="s">&lt;html&gt;</span>
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="s">&lt;head&gt;</span>
+</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="s">&lt;title&gt;An HTML Page&lt;/title&gt;</span>
+</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="s">&lt;/head&gt;</span>
+</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="s">&lt;body&gt;</span>
+</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="s">&lt;a href=&quot;http://www.lua.org&quot;&gt;Lua&lt;/a&gt;</span>
+</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="s">&lt;/body&gt;</span>
+</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="s">&lt;/html&gt;</span>
+</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="s">]]</span>
+</span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>
+</span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="nb">print</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+</span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>
+</span><span id="__span-5-42"><a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="c1">-- add equal signs to change delimiter</span>
+</span><span id="__span-5-43"><a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="kd">local</span> <span class="n">page_with_brackets</span> <span class="o">=</span> <span class="s">[===[</span>
+</span><span id="__span-5-44"><a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="s">&lt;html&gt;</span>
+</span><span id="__span-5-45"><a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="s">&lt;head&gt;</span>
+</span><span id="__span-5-46"><a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a><span class="s">&lt;title&gt;An HTML Page&lt;/title&gt;</span>
+</span><span id="__span-5-47"><a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a><span class="s">&lt;/head&gt;</span>
+</span><span id="__span-5-48"><a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a><span class="s">&lt;body&gt;</span>
+</span><span id="__span-5-49"><a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a><span class="s">DOESNT END ]]</span>
+</span><span id="__span-5-50"><a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a><span class="s">&lt;a href=&quot;http://www.lua.org&quot;&gt;Lua&lt;/a&gt;</span>
+</span><span id="__span-5-51"><a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a><span class="s">&lt;/body&gt;</span>
+</span><span id="__span-5-52"><a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a><span class="s">&lt;/html&gt;</span>
+</span><span id="__span-5-53"><a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a><span class="s">]===]</span>
+</span><span id="__span-5-54"><a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>
+</span><span id="__span-5-55"><a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a><span class="nb">print</span><span class="p">(</span><span class="n">page_with_brackets</span><span class="p">)</span>
+</span></code></pre></div>
 <h3 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1">-- thread and userdata are also types</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">))</span> <span class="c1">--&gt; string</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">10.4</span> <span class="o">*</span> <span class="mi">3</span><span class="p">))</span> <span class="c1">--&gt; number</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nb">print</span><span class="p">))</span> <span class="c1">--&gt; function</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nb">type</span><span class="p">))</span> <span class="c1">--&gt; function</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="kc">true</span><span class="p">))</span> <span class="c1">--&gt; boolean</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="kc">nil</span><span class="p">))</span> <span class="c1">--&gt; nil</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)))</span> <span class="c1">--&gt; string</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">({}))</span>
-
-<span class="kr">function</span> <span class="nf">Myfunc</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;your arg is &quot;</span> <span class="o">..</span> <span class="n">param</span><span class="p">)</span>
-<span class="kr">end</span>
-</code></pre></div>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">-- thread and userdata are also types</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">))</span> <span class="c1">--&gt; string</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">10.4</span> <span class="o">*</span> <span class="mi">3</span><span class="p">))</span> <span class="c1">--&gt; number</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nb">print</span><span class="p">))</span> <span class="c1">--&gt; function</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nb">type</span><span class="p">))</span> <span class="c1">--&gt; function</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="kc">true</span><span class="p">))</span> <span class="c1">--&gt; boolean</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="kc">nil</span><span class="p">))</span> <span class="c1">--&gt; nil</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)))</span> <span class="c1">--&gt; string</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">({}))</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="kr">function</span> <span class="nf">Myfunc</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;your arg is &quot;</span> <span class="o">..</span> <span class="n">param</span><span class="p">)</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="kr">end</span>
+</span></code></pre></div>
 <h3 id="tables">Tables<a class="headerlink" href="#tables" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -841,95 +801,95 @@ lua<span class="w"> </span>-i<span class="w"> </span>my-script.lua
 <p>avoid using lists with empty indices</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">mytable</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="n">mytable</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;this&#39;</span>
-<span class="n">mytable</span><span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;that&#39;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">mytable</span><span class="p">)</span>
-
-<span class="kd">local</span> <span class="n">mylist</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="kr">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span> <span class="kr">do</span>
-  <span class="n">mylist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tostring</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="kr">end</span>
-
-<span class="kd">local</span> <span class="n">mylist_length</span> <span class="o">=</span> <span class="o">#</span><span class="n">mylist</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mylist_length</span><span class="p">)</span> <span class="c1">--&gt; 10</span>
-
-<span class="kd">local</span> <span class="n">table_len</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">table_len</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;ten&quot;</span>
-<span class="n">table_len</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;ten&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="o">#</span><span class="n">table_len</span><span class="p">)</span> <span class="c1">-- returns 0 because assumes any nil index indicates end of array</span>
-
-<span class="c1">-- not 0 indexed</span>
-<span class="kd">local</span> <span class="n">array_constructor</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="s2">&quot;6&quot;</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">array_constructor</span><span class="p">)</span>
-
-<span class="kd">local</span> <span class="n">record_table</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">}</span>
-<span class="n">record_table</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;one&quot;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">record_table</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</code></pre></div>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">local</span> <span class="n">mytable</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">mytable</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;this&#39;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">mytable</span><span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;that&#39;</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">mytable</span><span class="p">)</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="kd">local</span> <span class="n">mylist</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="kr">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span> <span class="kr">do</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>  <span class="n">mylist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tostring</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="kr">end</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="kd">local</span> <span class="n">mylist_length</span> <span class="o">=</span> <span class="o">#</span><span class="n">mylist</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">mylist_length</span><span class="p">)</span> <span class="c1">--&gt; 10</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="kd">local</span> <span class="n">table_len</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="n">table_len</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;ten&quot;</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="n">table_len</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;ten&quot;</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="nb">print</span><span class="p">(</span><span class="o">#</span><span class="n">table_len</span><span class="p">)</span> <span class="c1">-- returns 0 because assumes any nil index indicates end of array</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="c1">-- not 0 indexed</span>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="kd">local</span> <span class="n">array_constructor</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="s2">&quot;6&quot;</span><span class="p">}</span>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="nb">print</span><span class="p">(</span><span class="n">array_constructor</span><span class="p">)</span>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="kd">local</span> <span class="n">record_table</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">}</span>
+</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="n">record_table</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;one&quot;</span>
+</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>
+</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="nb">print</span><span class="p">(</span><span class="n">record_table</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></code></pre></div>
 <h3 id="common-examples">Common Examples<a class="headerlink" href="#common-examples" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1">-- arithmetic operators</span>
-<span class="c1">-- + - (minus and negation) * / ^(exponent) % (modulo)</span>
-<span class="c1">-- relational operators</span>
-<span class="c1">-- &lt; &gt; &lt;= &gt;= == ~=</span>
-<span class="c1">-- logical operators</span>
-<span class="c1">-- not and or</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="kc">nil</span><span class="p">)</span> <span class="c1">--&gt; true</span>
-<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="kc">false</span><span class="p">)</span> <span class="c1">--&gt; true</span>
-<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">--&gt; false</span>
-<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="ow">not</span> <span class="kc">nil</span><span class="p">)</span> <span class="c1">--&gt; false</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="kc">false</span> <span class="o">==</span>  <span class="kc">nil</span><span class="p">)</span> <span class="c1">--&gt; false</span>
-<span class="nb">print</span><span class="p">(</span><span class="kc">false</span> <span class="o">==</span>  <span class="mi">0</span><span class="p">)</span> <span class="c1">--&gt; false</span>
-
-<span class="c1">-- precedence</span>
-<span class="cm">--[[</span>
-<span class="cm">^</span>
-<span class="cm">not # - (unary)</span>
-<span class="cm">* / %</span>
-<span class="cm">+ -</span>
-<span class="cm">..</span>
-<span class="cm">&lt; &gt; &lt;= &gt;= ~= ==</span>
-<span class="cm">and</span>
-<span class="cm">or</span>
-<span class="cm">--]]</span>
-
-
-<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="c1">--&gt; 0 1 nil</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-
-<span class="kd">local</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">-- local to the chunk</span>
-<span class="kr">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="kr">do</span>
-  <span class="kd">local</span> <span class="n">x</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="mi">2</span> <span class="c1">-- local to the while body</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">--&gt; 2, 4, 6, 8, ...</span>
-  <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="kr">end</span>
-
-<span class="kr">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">20</span> <span class="kr">then</span>
-  <span class="kd">local</span> <span class="n">x</span> <span class="c1">-- local to the &quot;then&quot; body</span>
-  <span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">-- (would print 22 if test succeeded)</span>
-<span class="kr">else</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">--&gt; 10 (the global one)</span>
-<span class="kr">end</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">--&gt; 10 (the global one)</span>
-
-<span class="kr">do</span>
-  <span class="kd">local</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-  <span class="kd">local</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">5</span>
-  <span class="n">X1</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">d</span> <span class="c1">-- assigned globally</span>
-<span class="kr">end</span> <span class="c1">-- scope of ’a’ and ’d’ ends here</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">X1</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">-- arithmetic operators</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1">-- + - (minus and negation) * / ^(exponent) % (modulo)</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1">-- relational operators</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1">-- &lt; &gt; &lt;= &gt;= == ~=</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1">-- logical operators</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1">-- not and or</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="kc">nil</span><span class="p">)</span> <span class="c1">--&gt; true</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="kc">false</span><span class="p">)</span> <span class="c1">--&gt; true</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">--&gt; false</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="ow">not</span> <span class="kc">nil</span><span class="p">)</span> <span class="c1">--&gt; false</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="nb">print</span><span class="p">(</span><span class="kc">false</span> <span class="o">==</span>  <span class="kc">nil</span><span class="p">)</span> <span class="c1">--&gt; false</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="nb">print</span><span class="p">(</span><span class="kc">false</span> <span class="o">==</span>  <span class="mi">0</span><span class="p">)</span> <span class="c1">--&gt; false</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="c1">-- precedence</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="cm">--[[</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="cm">^</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="cm">not # - (unary)</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="cm">* / %</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="cm">+ -</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="cm">..</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="cm">&lt; &gt; &lt;= &gt;= ~= ==</span>
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="cm">and</span>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="cm">or</span>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="cm">--]]</span>
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>
+</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+</span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="c1">--&gt; 0 1 nil</span>
+</span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>
+</span><span id="__span-8-32"><a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+</span><span id="__span-8-33"><a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>
+</span><span id="__span-8-34"><a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a><span class="kd">local</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">-- local to the chunk</span>
+</span><span id="__span-8-35"><a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a><span class="kr">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="kr">do</span>
+</span><span id="__span-8-36"><a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>  <span class="kd">local</span> <span class="n">x</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="mi">2</span> <span class="c1">-- local to the while body</span>
+</span><span id="__span-8-37"><a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a>  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">--&gt; 2, 4, 6, 8, ...</span>
+</span><span id="__span-8-38"><a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a>  <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span id="__span-8-39"><a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a><span class="kr">end</span>
+</span><span id="__span-8-40"><a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a>
+</span><span id="__span-8-41"><a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a><span class="kr">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">20</span> <span class="kr">then</span>
+</span><span id="__span-8-42"><a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a>  <span class="kd">local</span> <span class="n">x</span> <span class="c1">-- local to the &quot;then&quot; body</span>
+</span><span id="__span-8-43"><a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a>  <span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
+</span><span id="__span-8-44"><a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a>  <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">-- (would print 22 if test succeeded)</span>
+</span><span id="__span-8-45"><a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a><span class="kr">else</span>
+</span><span id="__span-8-46"><a id="__codelineno-8-46" name="__codelineno-8-46" href="#__codelineno-8-46"></a>  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">--&gt; 10 (the global one)</span>
+</span><span id="__span-8-47"><a id="__codelineno-8-47" name="__codelineno-8-47" href="#__codelineno-8-47"></a><span class="kr">end</span>
+</span><span id="__span-8-48"><a id="__codelineno-8-48" name="__codelineno-8-48" href="#__codelineno-8-48"></a>
+</span><span id="__span-8-49"><a id="__codelineno-8-49" name="__codelineno-8-49" href="#__codelineno-8-49"></a><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">--&gt; 10 (the global one)</span>
+</span><span id="__span-8-50"><a id="__codelineno-8-50" name="__codelineno-8-50" href="#__codelineno-8-50"></a>
+</span><span id="__span-8-51"><a id="__codelineno-8-51" name="__codelineno-8-51" href="#__codelineno-8-51"></a><span class="kr">do</span>
+</span><span id="__span-8-52"><a id="__codelineno-8-52" name="__codelineno-8-52" href="#__codelineno-8-52"></a>  <span class="kd">local</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span id="__span-8-53"><a id="__codelineno-8-53" name="__codelineno-8-53" href="#__codelineno-8-53"></a>  <span class="kd">local</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">5</span>
+</span><span id="__span-8-54"><a id="__codelineno-8-54" name="__codelineno-8-54" href="#__codelineno-8-54"></a>  <span class="n">X1</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">d</span> <span class="c1">-- assigned globally</span>
+</span><span id="__span-8-55"><a id="__codelineno-8-55" name="__codelineno-8-55" href="#__codelineno-8-55"></a><span class="kr">end</span> <span class="c1">-- scope of ’a’ and ’d’ ends here</span>
+</span><span id="__span-8-56"><a id="__codelineno-8-56" name="__codelineno-8-56" href="#__codelineno-8-56"></a>
+</span><span id="__span-8-57"><a id="__codelineno-8-57" name="__codelineno-8-57" href="#__codelineno-8-57"></a><span class="nb">print</span><span class="p">(</span><span class="n">X1</span><span class="p">)</span>
+</span></code></pre></div>
 
 
 

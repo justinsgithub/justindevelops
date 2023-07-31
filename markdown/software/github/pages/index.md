@@ -1,5 +1,7 @@
 # GitHub Pages
 
+GitHub Pages Video: [https://youtu.be/oGAk60cUGrw](https://youtu.be/oGAk60cUGrw)
+
 Domain Verification Video: [https://www.youtube.com/watch?v=qleBf7HxPPM](https://www.youtube.com/watch?v=qleBf7HxPPM)
 
 Host your own website for free, with custom domain using GitHub Pages
