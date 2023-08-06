@@ -1,7 +1,7 @@
 ---
 ## About
 
-This site hosts the notes that outline the majority of my videos.
+This site hosts the notes that outline some of my videos.
 
 ---
 
