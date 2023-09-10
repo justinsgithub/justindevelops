@@ -10,20 +10,16 @@
       
       
       
-        <link rel="canonical" href="https://docs.justintylers.com/software/github/pages/">
+        <link rel="canonical" href="https://docs.justintylers.com/software/neovim/search-and-replace/">
       
       
-        <link rel="prev" href="../../../languages/lua/">
-      
-      
-        <link rel="next" href="../../../thoughts/software/rules-on-ricing/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
     
     
       
-        <title>Github Pages - JustinDevelops</title>
+        <title>Pattern - JustinDevelops</title>
       
     
     
@@ -79,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#github-pages" class="md-skip">
+        <a href="#pattern" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Github Pages
+              Pattern
             
           </span>
         </div>
@@ -314,16 +310,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
       
       
       
@@ -332,7 +326,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Software
@@ -343,73 +337,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Github Pages
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../github/pages/" class="md-nav__link">
         Github Pages
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#create-website-repo" class="md-nav__link">
-    Create Website Repo
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#publishing" class="md-nav__link">
-    Publishing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setting-custom-domain" class="md-nav__link">
-    Setting Custom Domain
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-custom-domain" class="md-nav__link">
-    Verify Custom Domain
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -497,30 +429,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-website-repo" class="md-nav__link">
-    Create Website Repo
+  <a href="#search-commands" class="md-nav__link">
+    Search Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Search Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#search-offsets" class="md-nav__link">
+    search offsets
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#publishing" class="md-nav__link">
-    Publishing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setting-custom-domain" class="md-nav__link">
-    Setting Custom Domain
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-custom-domain" class="md-nav__link">
-    Verify Custom Domain
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -539,149 +463,70 @@
                   
 
 
-<h1 id="github-pages">GitHub Pages<a class="headerlink" href="#github-pages" title="Permanent link">&para;</a></h1>
-<p>GitHub Pages Video: <a href="https://youtu.be/oGAk60cUGrw">https://youtu.be/oGAk60cUGrw</a></p>
-<p>Domain Verification Video: <a href="https://www.youtube.com/watch?v=qleBf7HxPPM">https://www.youtube.com/watch?v=qleBf7HxPPM</a></p>
-<p>Host your own website for free, with custom domain using GitHub Pages</p>
-<h2 id="create-website-repo">Create Website Repo<a class="headerlink" href="#create-website-repo" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>Create a new repo</p>
-<ul>
-<li>if this is a user site for your GitHub, repo name must be {username}.github.io</li>
-</ul>
-</li>
-<li>
-<p>Decide if you want to publish website in / (root) or /docs</p>
-</li>
-<li>
-<p>Place website files in chosen destination</p>
-<ul>
-<li>for example create file <code>docs/index.html</code> with the following content</li>
-</ul>
-</li>
-</ol>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>My GitHub Pages Site<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span> <span class="p">/&gt;</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span> <span class="p">/&gt;</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>My GitHub Pages Site<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<h1 id="pattern">Pattern<a class="headerlink" href="#pattern" title="Permanent link">&para;</a></h1>
+<h2 id="search-commands">Search Commands<a class="headerlink" href="#search-commands" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{count}/{pattern} - searches forward {count} occurrence of {pattern}
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>{count}/{pattern}/{offset} - searches forward {count} occurrence of {pattern} and jumps {offset} lines below it
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>{count}/ - repeats last search pattern and offset forward (does not reuse the last count)
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>{count}//{offset} - repeats last search pattern with new offset
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>{count}?{pattern} - reverse finds {count} occurrence of {pattern}
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>{count}?{pattern}?{offset} - finds {count} occurrence of {pattern} and jumps {offset} lines below it
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>{count}? - repeats last search pattern and offset backward (does not reuse the last count)
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>{count}??{offset} - repeats last search pattern with new offset backwards
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>{count}n - repeat latest search forward {count} times
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>{count}N - repeat latest search {count} times in the opposite direction (backwards?)
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>{count}* - search forward for {count} occurrence of word under cursor (or next word it can find in the current line) (or keyword if can&#39;t find word)
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>{count}# - search backward for {count} occurrence of word under cursor (or next word it can find in the current line) (or keyword if can&#39;t find word)
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>{count}g* - search forward for {count} occurrence of word (including if word is part of another word) under cursor (or next word it can find in the current line) (or keyword if can&#39;t find word)
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>{count}g# - search backward for {count} occurrence of word (including if word is part of another word) under cursor (or next word it can find in the current line) (or keyword if can&#39;t find word)
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>gd - goto declaration, goes to where the variable is declared (locally)
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>gD - goto declaration, goes to where the variable is declared (globally)
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>noh - remove highlighting from last search (does not work with autocommands)
 </span></code></pre></div>
-<h2 id="publishing">Publishing<a class="headerlink" href="#publishing" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>Go to repo settings and go to pages</p>
-</li>
-<li>
-<p>Select branch and folder to publish from</p>
-<ul>
-<li>folder must be / (root) or /docs</li>
-</ul>
-</li>
-</ol>
-<h2 id="setting-custom-domain">Setting Custom Domain<a class="headerlink" href="#setting-custom-domain" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>Go to repo settings, go to pages, go to custom domain, enter desired domain (which you own)</p>
-</li>
-<li>
-<p>Make sure a <code>CNAME</code> file is in the publishing folder that contains the domain name you have chosen</p>
-</li>
-<li>
-<p>go to DNS provider (such as google domains) and edit DNS settings so that CNAME points to your GitHub pages url (such as {username}.github.io)</p>
-<ul>
-<li>
-<p>such as docs.justin-develops.com points to justinsgithub.github.io</p>
-</li>
-<li>
-<p>if using root domain (such as justin-develops.com), must point A record to GitHub IP addresses</p>
-</li>
-</ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>  185.199.108.153
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  185.199.109.153
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  185.199.110.153
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  185.199.111.153
+<hr />
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pig dog
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>cat dog pig
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>cat dog pig
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>cat dog rat
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>cat pig dog
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>cat dog pig
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>cat dog pig
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>-
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>-- 
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>-catdog
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>-catdog
 </span></code></pre></div>
-<ul>
-<li>
-<p>you should configure WWW subdomain as well if using root domain</p>
-</li>
-<li>
-<p>use this command to check DNS configuration</p>
-</li>
-</ul>
-</li>
-</ol>
-<div class="termy">
-
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>dig<span class="w"> </span>www.example.com<span class="w"> </span>+nostats<span class="w"> </span>+nocomments<span class="w"> </span>+nocmd
+<h3 id="search-offsets">search offsets<a class="headerlink" href="#search-offsets" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[num] - [num] lines downwards, in column 1
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>+[num] - [num] lines downwards, in column 1
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>-[num] - [num] lines upwards, in column 1
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>e[+num] - [num] characters to the right of the end of the match
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>e[-num] - [num] characters to the left of the end of the match
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>s[+num] - [num] characters to the right of the start of the match
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>s[-num] - [num] characters to the left of the start of the match
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>b[+num] - [num] identical to s[+num] above (mnemonic: begin)
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>b[-num] - [num] identical to s[-num] above (mnemonic: begin)
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>;{pattern} -  perform another search
 </span></code></pre></div>
-</div>
-
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<ul>
-<li>may take a long time for changes with DNS provider to take effect (up to 24 hours)</li>
-<li>github pages will show an "improperly configured" error until the changes take effect</li>
-<li>will also take time for github to provision certs after domain check is successful</li>
-</ul>
-</div>
-<h2 id="verify-custom-domain">Verify Custom Domain<a class="headerlink" href="#verify-custom-domain" title="Permanent link">&para;</a></h2>
-<p>Verify your domain with GitHub for extra security and to prevent a domain takeover whenever your custom domain has any changes taking effect.</p>
-<ol>
-<li>
-<p>click profile in top right and click on settings</p>
-</li>
-<li>
-<p>click on "pages" and click "add a domain"</p>
-</li>
-<li>
-<p>enter domain you would like to add and click "Add domain"</p>
-</li>
-<li>
-<p>create a TXT record and enter the host name that GitHub gives you</p>
-<ul>
-<li>it should look something like below:</li>
-</ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>_github-pages-challenge-{github_username}
-</span></code></pre></div>
-</li>
-<li>
-<p>enter the data for the TXT record that GitHub gives you</p>
-<ul>
-<li>it should be random numbers and letters similar to below:</li>
-</ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>bbfb463f444445452f4411558f84z6
-</span></code></pre></div>
-</li>
-<li>
-<p>give time for you DNS provider changes to take effect, then hit verify</p>
-<ul>
-<li>
-<p>can take up to 24 hours, but 30 minutes to 1 hour has been my experience</p>
-</li>
-<li>
-<p>you can run this command to check if your DNS configuration has taken effect</p>
-</li>
-</ul>
-</li>
-</ol>
-<div class="termy">
-
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>dig<span class="w"> </span>_github-pages-challenge-USERNAME.example.com<span class="w"> </span>+nostats<span class="w"> </span>+nocomments<span class="w"> </span>+nocmd<span class="w"> </span>TXT
-</span></code></pre></div>
-</div>
-
-<div class="codehilite"><pre><span></span><code>- you should see your new TXT record in the output if changes have taken effect
-
-- or some other random information if not
-</code></pre></div>
 
 
 
