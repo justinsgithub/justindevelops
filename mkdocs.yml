@@ -40,6 +40,11 @@ nav:
   #     - Next.js API: software/prisma/nextjs-api.md
   - Software:
       - Github Pages: software/github/pages/index.md
+  # - NeoVim:
+  #     - Search: software/neovim/search-and-replace.md
+  - Thoughts:
+      - Rules On Ricing: thoughts/software/rules-on-ricing.md
+      # - Vim: software/vim/index.md
 markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
